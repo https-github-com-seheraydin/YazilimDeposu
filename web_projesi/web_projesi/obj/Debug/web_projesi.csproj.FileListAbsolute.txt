@@ -58,3 +58,7 @@ C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_pro
 C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\roslyn\vbc.exe.config
 C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\roslyn\vbc.rsp
+C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\EntityFramework.dll
+C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\EntityFramework.SqlServer.dll
+C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\EntityFramework.xml
+C:\Users\seher\OneDrive\Masaüstü\4.SINIF\YAZILIM BAKIMI\yazilim_deposu\web_projesi\web_projesi\bin\EntityFramework.SqlServer.xml

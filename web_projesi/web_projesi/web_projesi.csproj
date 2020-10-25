@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +86,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -148,6 +158,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\YazilimDeposuDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YazilimDeposuDB.edmx</DependentUpon>
+      <LastGenOutput>YazilimDeposuDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\YazilimDeposuDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YazilimDeposuDB.edmx</DependentUpon>
+      <LastGenOutput>YazilimDeposuDB.cs</LastGenOutput>
+    </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.bundle.js" />
@@ -172,6 +192,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\YazilimDeposuDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>YazilimDeposuDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\YazilimDeposuDB.edmx.diagram">
+      <DependentUpon>YazilimDeposuDB.edmx</DependentUpon>
+    </Content>
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-3.3.1.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
@@ -194,6 +221,45 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blog.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hakkimizda.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hizmet.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kategori.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kimlik.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YazilimDeposuDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimDeposuDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YazilimDeposuDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YazilimDeposuDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimDeposuDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\İletisim.cs">
+      <DependentUpon>YazilimDeposuDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -234,13 +300,13 @@
     <Folder Include="Content\AdminLayout\fonts\" />
     <Folder Include="Content\AdminLayout\img\" />
     <Folder Include="Content\AdminLayout\js\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="YazilimDeposuDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Yetki" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Icerik" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResimURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="KategoriId" Type="int" />
+        </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaId" />
+          </Key>
+          <Property Name="HakkimizdaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hizmet">
+          <Key>
+            <PropertyRef Name="HizmetId" />
+          </Key>
+          <Property Name="HizmetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+          <Property Name="ResimURL" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="İletisim">
+          <Key>
+            <PropertyRef Name="İletisimId" />
+          </Key>
+          <Property Name="İletisimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Whatsapp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+          <Property Name="Twitter" Type="nvarchar" MaxLength="50" />
+          <Property Name="Instagram" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="KategoriId" />
+          </Key>
+          <Property Name="KategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Kimlik">
+          <Key>
+            <PropertyRef Name="KimlikId" />
+          </Key>
+          <Property Name="KimlikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" />
+          <Property Name="Keywords" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="LogoURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ünvan" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Blog_Kategori">
+          <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+          <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategori">
+              <PropertyRef Name="KategoriId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="KategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YazilimDeposuDBModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hizmet" EntityType="Self.Hizmet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="İletisim" EntityType="Self.İletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kimlik" EntityType="Self.Kimlik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Blog_Kategori" Association="Self.FK_Blog_Kategori">
+            <End Role="Kategori" EntitySet="Kategori" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YazilimDeposuDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResimURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KategoriId" Type="Int32" />
+          <NavigationProperty Name="Kategori" Relationship="Self.FK_Blog_Kategori" FromRole="Blog" ToRole="Kategori" />
+        </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaId" />
+          </Key>
+          <Property Name="HakkimizdaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hizmet">
+          <Key>
+            <PropertyRef Name="HizmetId" />
+          </Key>
+          <Property Name="HizmetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ResimURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="İletisim">
+          <Key>
+            <PropertyRef Name="İletisimId" />
+          </Key>
+          <Property Name="İletisimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Whatsapp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Twitter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Instagram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="KategoriId" />
+          </Key>
+          <Property Name="KategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK_Blog_Kategori" FromRole="Kategori" ToRole="Blog" />
+        </EntityType>
+        <EntityType Name="Kimlik">
+          <Key>
+            <PropertyRef Name="KimlikId" />
+          </Key>
+          <Property Name="KimlikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LogoURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ünvan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Blog_Kategori">
+          <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+          <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategori">
+              <PropertyRef Name="KategoriId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="KategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YazilimDeposuDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+          <EntitySet Name="Hakkimizdas" EntityType="Self.Hakkimizda" />
+          <EntitySet Name="Hizmets" EntityType="Self.Hizmet" />
+          <EntitySet Name="İletisim" EntityType="Self.İletisim" />
+          <EntitySet Name="Kategoris" EntityType="Self.Kategori" />
+          <EntitySet Name="Kimliks" EntityType="Self.Kimlik" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Blog_Kategori" Association="Self.FK_Blog_Kategori">
+            <End Role="Kategori" EntitySet="Kategoris" />
+            <End Role="Blog" EntitySet="Blogs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YazilimDeposuDBModelStoreContainer" CdmEntityContainer="YazilimDeposuDBEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="ResimURL" ColumnName="ResimURL" />
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hakkimizdas">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Hakkimizda">
+              <MappingFragment StoreEntitySet="Hakkimizda">
+                <ScalarProperty Name="HakkimizdaId" ColumnName="HakkimizdaId" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hizmets">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Hizmet">
+              <MappingFragment StoreEntitySet="Hizmet">
+                <ScalarProperty Name="HizmetId" ColumnName="HizmetId" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="ResimURL" ColumnName="ResimURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="İletisim">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.İletisim">
+              <MappingFragment StoreEntitySet="İletisim">
+                <ScalarProperty Name="İletisimId" ColumnName="İletisimId" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Whatsapp" ColumnName="Whatsapp" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategoris">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Kategori">
+              <MappingFragment StoreEntitySet="Kategori">
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="kategoriAd" ColumnName="kategoriAd" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kimliks">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.Kimlik">
+              <MappingFragment StoreEntitySet="Kimlik">
+                <ScalarProperty Name="KimlikId" ColumnName="KimlikId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LogoURL" ColumnName="LogoURL" />
+                <ScalarProperty Name="Ünvan" ColumnName="Ünvan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="YazilimDeposuDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
