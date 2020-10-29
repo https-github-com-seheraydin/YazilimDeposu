@@ -34,6 +34,7 @@ namespace web_projesi.Controllers
         // POST: Kimlik/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, Kimlik kimlik, HttpPostedFileBase LogoURL)
         {
             //model doğrulandıysa işlemlere geç

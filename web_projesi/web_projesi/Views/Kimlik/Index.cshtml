@@ -42,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.Keywords)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.Raw(item.Description)
         </td>
         <td>
             <img src="@item.LogoURL" width="80" height="80" />

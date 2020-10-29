@@ -259,6 +259,7 @@
     <Folder Include="Content\AdminLayout\fonts\" />
     <Folder Include="Content\AdminLayout\img\" />
     <Folder Include="Content\AdminLayout\js\" />
+    <Folder Include="Content\ckeditor\" />
     <Folder Include="Uploads\Kimlik\" />
   </ItemGroup>
   <ItemGroup>
