@@ -246,6 +246,7 @@
     <Content Include="Views\Kimlik\Index.cshtml" />
     <Content Include="Views\Kimlik\Edit.cshtml" />
     <Content Include="Views\Hakkimizda\Index.cshtml" />
+    <Content Include="Views\Hakkimizda\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

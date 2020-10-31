@@ -19,7 +19,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Aciklama)
+            @Html.Raw(item.Aciklama)
         </td>
         <td>
             @Html.ActionLink("Güncelleme", "Edit", new { id=item.HakkimizdaId }) 
