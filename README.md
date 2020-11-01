@@ -1,5 +1,4 @@
 # YazilimDeposu
-Öğrencilerin projelerinin bulunduğu bir web sitesi. 
 
 Kullanılan Dil ve Teknoloiler
   -C#
