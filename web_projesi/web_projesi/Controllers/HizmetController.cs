@@ -15,5 +15,10 @@ namespace web_projesi.Controllers
         {
             return View(db.Hizmet.ToList());
         }
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
