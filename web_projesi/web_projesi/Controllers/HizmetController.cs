@@ -13,7 +13,7 @@ namespace web_projesi.Controllers
         // GET: Hizmet
         public ActionResult Index()
         {
-            return View();
+            return View(db.Hizmet.ToList());
         }
     }
 }

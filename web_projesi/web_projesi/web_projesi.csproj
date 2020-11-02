@@ -254,6 +254,7 @@
     <Content Include="Views\Iletisim\Details.cshtml" />
     <Content Include="Views\Iletisim\Edit.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Hizmet\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -271,7 +272,6 @@
     <Folder Include="Content\AdminLayout\js\" />
     <Folder Include="Content\ckeditor\" />
     <Folder Include="Uploads\Kimlik\" />
-    <Folder Include="Views\Hizmet\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />
