@@ -204,7 +204,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HakkimizdaController.cs" />
+    <Compile Include="Controllers\HizmetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +249,11 @@
     <Content Include="Views\Kimlik\Edit.cshtml" />
     <Content Include="Views\Hakkimizda\Index.cshtml" />
     <Content Include="Views\Hakkimizda\Edit.cshtml" />
+    <Content Include="Views\Iletisim\Create.cshtml" />
+    <Content Include="Views\Iletisim\Delete.cshtml" />
+    <Content Include="Views\Iletisim\Details.cshtml" />
+    <Content Include="Views\Iletisim\Edit.cshtml" />
+    <Content Include="Views\Iletisim\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -264,6 +271,7 @@
     <Folder Include="Content\AdminLayout\js\" />
     <Folder Include="Content\ckeditor\" />
     <Folder Include="Uploads\Kimlik\" />
+    <Folder Include="Views\Hizmet\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />
