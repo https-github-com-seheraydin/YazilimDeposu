@@ -256,6 +256,7 @@
     <Content Include="Views\Iletisim\Index.cshtml" />
     <Content Include="Views\Hizmet\Index.cshtml" />
     <Content Include="Views\Hizmet\Create.cshtml" />
+    <Content Include="Views\Hizmet\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

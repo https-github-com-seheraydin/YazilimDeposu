@@ -49,5 +49,19 @@ namespace web_projesi.Controllers
             }
             return View(hizmet);
         }
+        public ActionResult Edit(int? id)
+        {
+            if (id==null)
+            {
+                ViewBag.Uyari = "Güncellenecek hizmet bullunamadı";
+            }
+            var hizmet = db.Hizmet.Find(id);
+            if (hizmet==null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(hizmet);
+        }
     }
 }
