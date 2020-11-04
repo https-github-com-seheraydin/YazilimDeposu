@@ -97,5 +97,21 @@ namespace web_projesi.Controllers
             }
             return View();
         }
+        public ActionResult Delete(int id)
+        {
+            if (id==null)
+            {
+                return HttpNotFound();
+            }
+            var h = db.Hizmet.Find(id);
+            if (h==null)
+            {
+                return HttpNotFound();
+            }
+            db.Hizmet.Remove(h);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            
+        }
     }
 }
