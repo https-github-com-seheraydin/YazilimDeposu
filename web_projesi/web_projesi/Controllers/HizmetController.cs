@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using web_projesi.Models.DataContext;
@@ -35,11 +36,11 @@ namespace web_projesi.Controllers
                     WebImage img = new WebImage(ResimURL.InputStream);
                     FileInfo imginfo = new FileInfo(ResimURL.FileName);
 
-                    String logoname = ResimURL.FileName + imginfo.Extension;
+                    String hizmetname = Guid.NewGuid().ToString() + imginfo.Extension;
                     img.Resize(500, 500);
-                    img.Save("~/Uploads/Hizmet/" + logoname);
+                    img.Save("~/Uploads/Hizmet/" + hizmetname);
 
-                    hizmet.ResimURL = "/Uploads/Hizmet/" + logoname;
+                    hizmet.ResimURL = "/Uploads/Hizmet/" + hizmetname;
 
                 }
                 db.Hizmet.Add(hizmet);
@@ -62,6 +63,39 @@ namespace web_projesi.Controllers
             }
 
             return View(hizmet);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(int? id, Hizmet hizmet, HttpPostedFileBase ResimURL)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                var h = db.Hizmet.Where(x => x.HizmetId == id).SingleOrDefault();
+                if (ResimURL!=null)
+                {
+                    //daha önce kaydetmiş olunan dosya kontrolü
+                    if (System.IO.File.Exists(Server.MapPath(h.ResimURL)))
+                    {
+                        System.IO.File.Delete(Server.MapPath(h.ResimURL));
+                    }
+
+                    WebImage img = new WebImage(ResimURL.InputStream);
+                    FileInfo imginfo = new FileInfo(ResimURL.FileName);
+
+                    String hizmetname = Guid.NewGuid().ToString() + imginfo.Extension;
+                    img.Resize(500, 500);
+                    img.Save("~/Uploads/Hizmet/" + hizmetname);
+
+                    h.ResimURL = "/Uploads/Hizmet/" + hizmetname;
+                }
+
+                h.Baslik = hizmet.Baslik;
+                h.Aciklama = hizmet.Aciklama;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }

@@ -6,7 +6,7 @@
 
 <h2>Hizmet Düzenle</h2>
 <div class="form">
-    <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Hizmet/Edit/" enctype="multipart/form-data">
+    <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Hizmet/Edit/@Model.HizmetId" enctype="multipart/form-data">
         <div class="form-group ">
             <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
             <div class="col-lg-10">
@@ -28,7 +28,7 @@
         <div class="form-group ">
             <label for="curl" class="control-label col-lg-2">Resim<span class="required">*</span></label>
             <div class="col-lg-10">
-                <input type="file" required class="form-control " name="ResimURL" accept=".jpeg,.png,.jpg" />
+                <input type="file" class="form-control " name="ResimURL" accept=".jpeg,.png,.jpg" />
             </div>
         </div>
         <div class="form-group">
@@ -36,7 +36,7 @@
                 <button class="btn btn-primary" type="submit">Kaydet</button>
                 <button class="btn btn-default" type="button"><a href="/Hizmet/Index">İptal</a></button>
             </div>
-
+            </div>
     </form>
 </div>
 
