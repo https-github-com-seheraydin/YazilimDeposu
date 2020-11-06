@@ -207,6 +207,7 @@
     <Compile Include="Controllers\HizmetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,6 +258,11 @@
     <Content Include="Views\Hizmet\Index.cshtml" />
     <Content Include="Views\Hizmet\Create.cshtml" />
     <Content Include="Views\Hizmet\Edit.cshtml" />
+    <Content Include="Views\Kategori\Create.cshtml" />
+    <Content Include="Views\Kategori\Delete.cshtml" />
+    <Content Include="Views\Kategori\Details.cshtml" />
+    <Content Include="Views\Kategori\Edit.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
