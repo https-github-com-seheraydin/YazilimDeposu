@@ -12,10 +12,17 @@ namespace web_projesi.Controllers
     {
         private YazilimDeposuDBContext db = new YazilimDeposuDBContext();
         // GET: Blog
+        
         public ActionResult Index()
         {
-            var b = db.Blog.ToList();
+            db.Configuration.LazyLoadingEnabled = false;
+            var b = db.Blog.Include("Kategori").ToList().OrderByDescending(x=>x.BlogId);
             return View(b);
+        }
+        public ActionResult Create()
+        {
+            ViewBag.KategoriId = new SelectList(db.Kategori, "KategoriId", "KategoriAd");
+            return View();
         }
     }
 }
