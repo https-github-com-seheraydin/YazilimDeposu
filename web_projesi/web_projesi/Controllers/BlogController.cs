@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -95,5 +96,42 @@ namespace web_projesi.Controllers
             }
             return View(blog);
         }
+        // GET: Blog/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Blog blog = db.Blog.Find(id);
+            if (blog == null)
+            {
+                return HttpNotFound();
+            }
+            return View(blog);
+        }
+
+        // POST: Blog/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Blog blog = db.Blog.Find(id);
+            db.Blog.Remove(blog);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
     }
 }
