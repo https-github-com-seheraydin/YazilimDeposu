@@ -70,8 +70,40 @@ namespace web_projesi.Controllers
             return View(kimlik);
         }
 
-      
+        //seher düzenleme
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Create(Kimlik kimlik, HttpPostedFileBase LogoURL)
+        {
+            if (ModelState.IsValid)
+            {
+                if (LogoURL != null)
+                {
 
-     
+                    WebImage img = new WebImage(LogoURL.InputStream);
+                    FileInfo imginfo = new FileInfo(LogoURL.FileName);
+
+                    String kimlikname = Guid.NewGuid().ToString() + imginfo.Extension;
+                    img.Resize(500, 500);
+                    img.Save("~/Uploads/Hizmet/" + kimlikname);
+
+                    kimlik.LogoURL = "/Uploads/Hizmet/" + kimlikname;
+
+                }
+                db.Kimlik.Add(kimlik);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            return View(kimlik);
+        }
+
+
+
+
     }
 }
