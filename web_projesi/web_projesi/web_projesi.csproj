@@ -266,6 +266,7 @@
     <Content Include="Views\Kategori\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
