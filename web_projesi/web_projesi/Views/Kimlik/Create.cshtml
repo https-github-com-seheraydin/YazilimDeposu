@@ -9,9 +9,9 @@
    
 </script>
 
-<h2>Create</h2>
+<h2>Yeni Ekle</h2>
 
-@using (Html.BeginForm("Edit", "Kimlik", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Kimlik", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -62,12 +62,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Oluştur" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Geri Dön", "Index")
 </div>

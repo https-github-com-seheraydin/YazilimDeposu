@@ -89,9 +89,9 @@ namespace web_projesi.Controllers
 
                     String kimlikname = Guid.NewGuid().ToString() + imginfo.Extension;
                     img.Resize(500, 500);
-                    img.Save("~/Uploads/Hizmet/" + kimlikname);
+                    img.Save("~/Uploads/Kimlik/" + kimlikname);
 
-                    kimlik.LogoURL = "/Uploads/Hizmet/" + kimlikname;
+                    kimlik.LogoURL = "/Uploads/Kimlik/" + kimlikname;
 
                 }
                 db.Kimlik.Add(kimlik);
