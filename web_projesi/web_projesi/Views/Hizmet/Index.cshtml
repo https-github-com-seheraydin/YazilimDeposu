@@ -9,7 +9,7 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>#</th>
+            
             <th>Başlık</th>
             <th>Açıklamalar</th>
             <th>Resim URL</th>
@@ -20,7 +20,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.HizmetId</td>
+                
                 <td>@item.Baslik</td>
                 <td>@Html.Raw(item.Aciklama)</td>
                 <td><img width="100" height="100" src="@item.ResimURL" /></td>

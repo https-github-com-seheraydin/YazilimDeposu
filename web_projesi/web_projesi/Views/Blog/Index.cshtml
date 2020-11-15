@@ -21,7 +21,7 @@
 <table class="table table-striped" id="myTable">
     <thead>
         <tr>
-            <th>#</th>
+           
             <th>Başlık</th>
             <th>Kategori</th>
             <th>ResimURL</th>
@@ -31,13 +31,13 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.BlogId</td>
-                <td>@item.Baslik</td>
-                <td>@item.Kategori.KategoriAd</td>
-                <td><img src="@item.ResimURL" width="150" height="150" /></td>
-                <td><a href="/Blog/Edit/@item.BlogId">Güncelle</a> | <a href="/Blog/Delete/@item.BlogId">Sil</a></td>
-            </tr>
+        <tr>
+            
+            <td>@item.Baslik</td>
+            <td>@item.Kategori.KategoriAd</td>
+            <td><img src="@item.ResimURL" width="150" height="150" /></td>
+            <td><a href="/Blog/Edit/@item.BlogId">Güncelle</a> | <a href="/Blog/Delete/@item.BlogId">Sil</a></td>
+        </tr>
         }
        
        
