@@ -28,6 +28,7 @@
 
         <form class="login-form" method="post"  action="/Admin/Login/">
             <div class="login-wrap">
+                
                 @if (Session["adminid"] == null)
                 {
                     <p class="alert alert-danger">@ViewBag.Uyari</p>

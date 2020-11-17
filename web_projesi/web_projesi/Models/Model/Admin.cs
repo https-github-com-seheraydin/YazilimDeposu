@@ -7,6 +7,7 @@ using System.Web;
 
 namespace web_projesi.Models.Model
 {
+    //db admin tablosu
     [Table("Admin")]
     public class Admin
     {
