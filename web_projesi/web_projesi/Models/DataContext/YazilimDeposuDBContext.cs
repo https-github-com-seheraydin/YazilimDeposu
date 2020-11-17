@@ -9,7 +9,7 @@ namespace web_projesi.Models.DataContext
 {
     public class YazilimDeposuDBContext:DbContext
     {
-        //ilk yüklendiğinde 
+        //ilk yüklendiğinde oluşan tablolar
         public YazilimDeposuDBContext():base("YazilimDeposuWebDB")
         {
 
