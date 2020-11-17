@@ -18,7 +18,7 @@ namespace web_projesi.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var sorgu = db.Kategori.ToList();
+            var sorgu = db.Admin.ToList();
             return View(sorgu);
         }
         
