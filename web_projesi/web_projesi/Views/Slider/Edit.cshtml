@@ -6,8 +6,8 @@
 }
 
 <h2>Güncelle</h2>
-
-@using (Html.BeginForm())
+<!--Resim yükleme işlemi yapmak için aşağıdaki kod satırı gerekli"-->
+@using (Html.BeginForm("Edit", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -36,7 +36,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ResimURL, new { htmlAttributes = new { @class = "form-control" } })
+                <!--Resim seçme işlemi (Dosya Seç)-->-->
+                <input type="file" name="ResimURL" class="form-control" placeholder="Resim Seçiniz" />
                 @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
             </div>
         </div>

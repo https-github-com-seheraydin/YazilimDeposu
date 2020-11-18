@@ -46,7 +46,7 @@ namespace web_projesi.Controllers
                 blog.ResimURL = "/Uploads/Blog/" + blogImgName;
 
             }
-            //resim yükleme start
+            //resim yükleme finish
             db.Blog.Add(blog);
             db.SaveChanges();
             return RedirectToAction("Index");

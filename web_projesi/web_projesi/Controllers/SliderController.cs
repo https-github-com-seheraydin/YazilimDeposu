@@ -17,6 +17,8 @@ namespace web_projesi.Controllers
     {
         private YazilimDeposuDBContext db = new YazilimDeposuDBContext();
 
+        public object ResimURL { get; private set; }
+
         // GET: Sliders
         public ActionResult Index()
         {
@@ -92,11 +94,37 @@ namespace web_projesi.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SliderId,Baslik,Aciklama,ResimURL")] Slider slider)
+
+        //ResimUrl aldırma için HttpPstedFileBase ResimURL ekle ve dışarıdan gelen id al
+        public ActionResult Edit([Bind(Include = "SliderId,Baslik,Aciklama,ResimURL")] Slider slider, HttpPostedFileBase ResimURL, int id)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(slider).State = EntityState.Modified;
+                //Slider silme resim klasörü içeriği temizleme start
+                var s = db.Slider.Where(x => x.SliderId == id).SingleOrDefault();
+                if (ResimURL != null)
+                {
+                    //daha önce kaydetmiş olunan dosya kontrolü
+                    if (System.IO.File.Exists(Server.MapPath(s.ResimURL)))
+                    {
+                        System.IO.File.Delete(Server.MapPath(s.ResimURL));
+                    }
+
+                    WebImage img = new WebImage(ResimURL.InputStream);
+                    FileInfo imginfo = new FileInfo(ResimURL.FileName);
+
+                    String sliderimgname = Guid.NewGuid().ToString() + imginfo.Extension;
+                    img.Resize(1024, 360);
+                    img.Save("~/Uploads/Slider/" + sliderimgname);
+
+                    s.ResimURL = "/Uploads/Slider/" + sliderimgname;
+                }
+                //Slider silme resim klasörü içeriği temizleme finish
+
+                //Açıklama ve başlık kısımlarırnın güncellenmesi işlemi 
+                s.Baslik = slider.Baslik;
+                s.Aciklama = slider.Aciklama;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
