@@ -17,7 +17,9 @@
         </dt>
 
         <dd>
+           
             @Html.DisplayFor(model => model.Kategori.KategoriAd)
+           
         </dd>
 
         <dt>
@@ -31,10 +33,12 @@
         <dt>
             @Html.DisplayNameFor(model => model.Icerik)
         </dt>
+       
 
         <dd>
-            
-           @Html.DisplayFor(model => model.Icerik)
+         
+            @Html.Raw(Model.Icerik)
+             
         </dd>
 
         <dt>
@@ -42,7 +46,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResimURL)
+            <!--Delete kısmında resimURL yerine resmi göster-->
+            <img src="@Model.ResimURL" width="150" height="150" />
         </dd>
 
     </dl>
