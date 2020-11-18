@@ -8,9 +8,11 @@
 <h2>Slider Ekle</h2>
 
 <p>
-    @Html.ActionLink("Yeni Ekle", "Create")
+    <!--Yeni slider ekle kısmı link yerine buton haline getirildi-->
+    <a href="/Slider/Create/"class="btn btn-info">Yeni Slider Ekle</a>
 </p>
-<table class="table">
+<!--Table classına bootstrap tabledan biri eklendi-->
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Baslik)
@@ -33,7 +35,8 @@
             @Html.DisplayFor(modelItem => item.Aciklama)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ResimURL)
+            <!--Index sayfasında resim adres yolu yerine resmin kendisi görünsün-->
+            <img src="@item.ResimURL" width="150" height="150" />
         </td>
         <td>
             @Html.ActionLink("Güncelle", "Edit", new { id=item.SliderId }) |
