@@ -151,7 +151,13 @@ namespace web_projesi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            // slider silme işleminde klasörden de silme
             Slider slider = db.Slider.Find(id);
+            if (System.IO.File.Exists(Server.MapPath(slider.ResimURL)))
+            {
+                System.IO.File.Delete(Server.MapPath(slider.ResimURL));
+            }
+          
             db.Slider.Remove(slider);
             db.SaveChanges();
             return RedirectToAction("Index");
