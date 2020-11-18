@@ -32,6 +32,7 @@ namespace web_projesi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Blog blog, HttpPostedFileBase ResimURL)
         {
+            //resim yükleme start
             if (ResimURL != null)
             {
                
@@ -45,6 +46,7 @@ namespace web_projesi.Controllers
                 blog.ResimURL = "/Uploads/Blog/" + blogImgName;
 
             }
+            //resim yükleme start
             db.Blog.Add(blog);
             db.SaveChanges();
             return RedirectToAction("Index");

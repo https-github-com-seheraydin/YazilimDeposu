@@ -446,6 +446,7 @@
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -506,6 +507,11 @@
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Delete.cshtml" />
     <Content Include="Views\Kimlik\Create.cshtml" />
+    <Content Include="Views\Slider\Create.cshtml" />
+    <Content Include="Views\Slider\Delete.cshtml" />
+    <Content Include="Views\Slider\Details.cshtml" />
+    <Content Include="Views\Slider\Edit.cshtml" />
+    <Content Include="Views\Slider\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -525,6 +531,7 @@
     <Folder Include="Uploads\Blog\" />
     <Folder Include="Uploads\Hizmet\" />
     <Folder Include="Uploads\Kimlik\" />
+    <Folder Include="Uploads\Slider\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />

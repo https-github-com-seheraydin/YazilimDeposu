@@ -1,0 +1,46 @@
+﻿@model IEnumerable<web_projesi.Models.Model.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Slider Ekle</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResimURL)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.SliderId }) |
+            @Html.ActionLink("Görüntüle", "Details", new { id=item.SliderId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.SliderId })
+        </td>
+    </tr>
+}
+
+</table>
