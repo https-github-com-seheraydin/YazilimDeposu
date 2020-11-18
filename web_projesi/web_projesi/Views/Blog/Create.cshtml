@@ -7,7 +7,7 @@
     CKEDITOR.replacee('editor')
 
 </script>
-<h2>Blog Kayıt Ekle</h2>
+<h2>Blog İçerik Ekle</h2>
 <div class="form">
    @*<form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Blog/Create/" enctype="multipart/form-data">*@
     @using (Html.BeginForm("Create", "Blog", FormMethod.Post, new { enctype="multipart/form-data"}))
@@ -41,7 +41,7 @@
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
                 <button class="btn btn-primary" type="submit">Ekle</button>
-                <button class="btn btn-default" type="button"><a href="/Blog/Index/">İptal</a></button>
+                <button class="btn btn-default" type="button"><a href="/Blog/Index/">İptal Et</a></button>
             </div>
         </div>
     }
