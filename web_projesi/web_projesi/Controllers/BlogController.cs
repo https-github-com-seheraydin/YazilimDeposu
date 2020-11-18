@@ -119,20 +119,30 @@ namespace web_projesi.Controllers
 
         public ActionResult DeleteConfirmed(int id)
         {
-            Blog blog = db.Blog.Find(id);
-            db.Blog.Remove(blog);
+            var b = db.Blog.Find(id);
+            if (b==null)
+            {
+                return HttpNotFound();
+            }
+            if (System.IO.File.Exists(Server.MapPath(b.ResimURL)))
+            {
+                System.IO.File.Delete(Server.MapPath(b.ResimURL));
+            }
+
+            //Blog blog = db.Blog.Find(id);
+            db.Blog.Remove(b);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
 
     }
