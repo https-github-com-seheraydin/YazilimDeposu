@@ -1,0 +1,30 @@
+﻿
+@model IEnumerable<web_projesi.Models.Model.Slider>
+
+@{
+    Layout = null;
+}
+
+<!-- Slide 1 -->
+<div class="carousel-item active">
+    <div class="carousel-container">
+        <ul>
+
+            @foreach (var item in Model)
+            {
+                <li>
+                    <h2 class="animate__animated animate__fadeInDown">Hoş Geldiniz<span> Sitemize</span></h2>
+                    <img src="@item.ResimURL" alt="@item.Baslik" />
+                    <h3>@item.Baslik</h3>
+                    <p class="">@item.Aciklama</p>
+
+                </li>
+
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
