@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="ResimURL" class="form-control" required placeholder="Resim Seçiniz" />
+                <input type="file" name="ResimURL" class="form-control" required placeholder="Resim Seçiniz"/>
                 @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
             </div>
         </div>
