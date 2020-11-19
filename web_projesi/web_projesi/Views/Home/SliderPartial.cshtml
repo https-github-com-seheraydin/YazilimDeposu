@@ -5,18 +5,45 @@
     Layout = null;
 }
 
-
-<!-- Slide 1 -->
+ @*Slide 1*@
 <div class="carousel-item active">
+        <div class="carousel-container">      
+            <img src="~/Uploads/Slider/ninova.png"/>
+            <h3 class="animate__animated animate__fadeInUpBig alert-info">Yazılım Kenti</h3>
+            <p class="animate__animated animate__fadeInUp">Ninova geniş ölçekli, web tabanlı bir elektronik öğrenme platformudur. Eğitimci ve öğrencilere elektronik ortamda öğretme ve öğrenme imkanı sunar.</p>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp">DAHA FAZLASI</a>
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="carousel-item">
+            <div class="carousel-container">
+                <img src="@item.ResimURL" alt="@item.Baslik" />
+                <div class="flex-caption">
+                    <h3 class="animate__animated animate__fadeInUpBig alert-info">@item.Baslik</h3>
+                    <p class="animate__animated animate__fadeInUp">@item.Aciklama</p>
+                    <a href="#" class="btn-get-started animate__animated animate__fadeInUp">DAHA FAZLASI</a>
+                </div>
+            </div>
+        </div>
+    }
+
+       
+
+
+
+<!-- Slide 1--> 
+@*<div class="carousel-item active">
     <div class="carousel-container">
         <h2 class="animate__animated animate__fadeInDown"></h2>
         <img src="~/uploads/slider/36b9576e-aca7-4cb5-87a0-6f54e62908ef.png" />
-        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+        <p class="animate__animated animate__fadeInUp">Web sitelerinin vazgeçilmezi olan HTML (Hyper Text Markup Language), bir programlama dili olarak tanımlanamaz. Zira HTML kodlarıyla kendi başına çalışan bir program yazılamaz. Ancak bu dili yorumlayabilen programlar aracılığıyla çalışabilen programlar yazılabilir. Programlama dili denilememesinin nedeni tam olarak budur. HTML dosyalarının aktarımı için HTTP (Hyper Text Transfer Protocol) kullanılır. </p>
+        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Daha Fazla</a>
     </div>
-</div>
+</div>*@
 
-<!-- Slide 2 -->
+@*<!-- Slide 2 -->
 <div class="carousel-item">
     <div class="carousel-container">
         <h2 class="animate__animated animate__fadeInDown"></h2>
@@ -44,7 +71,7 @@
 <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
     <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-</a>
+</a>*@
 
 
 

@@ -563,6 +563,7 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="Uploads\Slider\ninova.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -663,7 +664,6 @@
     <Folder Include="Uploads\Blog\" />
     <Folder Include="Uploads\Hizmet\" />
     <Folder Include="Uploads\Kimlik\" />
-    <Folder Include="Uploads\Slider\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />

@@ -18,6 +18,8 @@ namespace web_projesi.Controllers
 
         public ActionResult SliderPartial() //Slider tablosundaki menüleri getir.
         {
+
+            //slider en son eklenen resmi önce göster
             return View(db.Slider.ToList());
         }
 
