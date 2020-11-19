@@ -22,6 +22,10 @@ namespace web_projesi.Controllers
             //slider en son eklenen resmi önce göster
             return View(db.Slider.ToList());
         }
+        public ActionResult HizmetPartial()//Hizmetler tablosundaki menüleri getir.
+        {
+            return View(db.Hizmet.ToList());
+        }
 
 
     }
