@@ -15,6 +15,8 @@ namespace web_projesi.Controllers
         {
             ViewBag.Hizmetler = db.Hizmet.ToList();
             ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+
             return View();
         }
 
