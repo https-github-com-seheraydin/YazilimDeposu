@@ -112,12 +112,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h4>Yazılım Deposu</h4>
-                        <p>Eğitimci ve öğrencilere elektronik ortamda yardımlaşma imkanı</p>
+                        <h4>Bültenimiz</h4>
+                        <p>Gmail adresinizi girerek abone olabilirsiniz</p>
                     </div>
                     <div class="col-lg-6">
                         <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                            <input type="email" name="email"><input type="submit" value="Abone ol">
                         </form>
                     </div>
                 </div>
@@ -129,62 +129,55 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Menü</h4>
+                        <h4>Menülerimiz</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="~/Views/Home/Index.cshtml">Ana Sayfa</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="~/Views/Home/Hakkimizda.cshtml">Hakkımızda</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hizmetlerimiz</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">İletişim</a></li>                            
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hackathon</a></li>
-                            <ol>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Hackathon Konuları</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Hackathon Birincileri</a></li>
-                            </ol>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Blog</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dersler</a></li>
-                            <ol>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Algoritma Programlama</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">İleri Web Programlama</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Java</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Derin Öğrenme</a></li>
-                            </ol>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Index/">Ana Sayfa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hakkımızda/">Hakkımızda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/İletişim/">İletişim</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hackathon/">Hackathon</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Blog/">Blog</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Dersler/">Dersler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Duyuru Başvuruları/">Duyuru Başvuruları</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Hizmetlerimiz</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Web Tasarımı</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Web Geliştirme</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Ürün Yönetimi</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Pazarlama</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Grafik Tasarım</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Adres</h4>
+                        <h4>Adres Bilgileri</h4>
                         <p>
-                            
-                            Manisa Celal Bayar Üniversitesi <br>
-                            Hasan Ferdi Turgutlu Teknoloji Fakültesi<br>
-                            Yazılım Mühendisliği Bölümü<br>
-                            Manisa, Turgutlu <br><br>
-                            <strong>Telefon:</strong> +1 5589 55488 55<br>
-                            <strong>E-mail:</strong> info@example.com<br>
+                            @ViewBag.Iletisim.Adres<br>
+                            <strong>Telefon:</strong> @ViewBag.Iletisim.Telefon<br>
+                            <strong>Fax:</strong>  @ViewBag.Iletisim.Fax<br>
+                            <strong>Whatsapp:</strong> @ViewBag.Iletisim.Whatsapp<br>
+                            <strong>Facebook:</strong> @ViewBag.Iletisim.Facebook<br>
+                            <strong>Instagram:</strong> @ViewBag.Iletisim.Instagram<br>
+                            <strong>Twitter:</strong>  @ViewBag.Iletisim.Twitter<br>
+
                         </p>
 
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <h3>Hakkımızda</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <h4>Blog Yazıları</h4>
+                        <p>SERHAT YAREN</p>
+                        <p>SEHER AYDIN</p>
                         @*<div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>*@
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>*@
                     </div>
 
                 </div>
