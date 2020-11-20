@@ -45,14 +45,15 @@
 
                     <div class="icon-box-blue">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                    </div>
+                        <h3>SİTEMİZİN TANITIM VİDEOSU</h3>
+                        <h4 class="title"><a href="">Tanıtım Kategorileri</a></h4>
+                        <ul>
+                            @foreach (var item in ViewBag.Kategori)
+                            {
+                                <li><a href="/Home/Kategori/">@item.Aciklama</a></li>
+                            }
 
-                    <div class="icon-box-blue">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusam"us et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        </ul>
                     </div>
 
                 </div>
