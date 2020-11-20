@@ -17,7 +17,7 @@ namespace web_projesi.Controllers
             ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
             ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
             ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
-           
+            ViewBag.Kimlik = db.Kimlik.ToList();
 
             return View();
         }

@@ -45,8 +45,8 @@
 
                     <div class="icon-box-blue">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h3>SİTEMİZİN TANITIM VİDEOSU</h3>
-                        <h4 class="title"><a href="/Home/Index/">Tanıtım Kategorileri</a></h4>
+                        
+                        <h4 class="title">Tanıtım Kategorileri</h4>
                         <ul>
                             @foreach (var item in ViewBag.Kategori)
                             {
@@ -68,12 +68,24 @@
             <div class="section-title">
                 <h2>Sitemizin Özellikleri</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua jflsdsmdldmslfsdlfsmdldfsfsfds.
-                </p>
-            </div>
+                   
+                        @foreach (var item in ViewBag.Kimlik)
+                        {
+                            <div>
+                                <p>
+                                <ul><li>@Html.Raw(@item.Description)</li></ul>
+                                <center><img src="@item.LogoURL" width="400" height="300" /></center><br /><br /><br /><br /></p>
+                            </div>
+        
+                            
+                        }
 
-            <div class="row" data-aos="fade-up">
+                       
+
+                        </p>
+                    </div>
+
+            @*<div class="row" data-aos="fade-up">
                 <div class="col-md-5">
                     <img src="/Content/SiteLayout/assets/img/features-1.svg" class="img-fluid" alt="">
                 </div>
@@ -139,7 +151,7 @@
                         culpa qui officia deserunt mollit anim id est laborum
                     </p>
                 </div>
-            </div>
+            </div>*@
 
         </div>
     </section><!-- End Features Section -->
