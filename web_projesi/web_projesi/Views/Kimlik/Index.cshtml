@@ -51,9 +51,9 @@
             @Html.DisplayFor(modelItem => item.Unvan)
         </td>
         <td>
-            @Html.ActionLink("Güncelle", "Edit", new { id=item.KimlikId }) 
-           
-           
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.KimlikId })|@Html.ActionLink("Sil", "Delete", new { id = item.KimlikId })
+
+
         </td>
     </tr>
 }

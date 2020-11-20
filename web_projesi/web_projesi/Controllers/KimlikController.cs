@@ -102,7 +102,22 @@ namespace web_projesi.Controllers
             return View(kimlik);
         }
 
+        public ActionResult Delete(int id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var k = db.Kimlik.Find(id);
+            if (k == null)
+            {
+                return HttpNotFound();
+            }
+            db.Kimlik.Remove(k);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
+        }
 
 
     }
