@@ -69,22 +69,21 @@
             <div class="section-title">
                 <h2>Sitemizin Özellikleri</h2>
                 <p>
-                   
-                        @foreach (var item in ViewBag.Kimlik)
-                        {
-                            <div>
-                                <p>
-                                <ul><li>@Html.Raw(@item.Description)</li></ul>
-                                <center><img src="@item.LogoURL" width="400" height="300" /></center><br /><br /><br /><br /></p>
-                            </div>
-        
-                            
-                        }
 
-                       
+                    @foreach (var item in ViewBag.Kimlik)
+                    {
+                        
+                    <p>
+                        <ul><li>@Html.Raw(@item.Description)</li></ul>
+                        <center><img src="@item.LogoURL" width="400" height="300" /></center><br /><br /><br /><br />
+                    </p>
+                          
+                
 
-                        </p>
-                    </div>
+            }
+
+                
+                </div>
 
             @*<div class="row" data-aos="fade-up">
                 <div class="col-md-5">
@@ -154,7 +153,6 @@
                 </div>
             </div>*@
 
-        </div>
     </section><!-- End Features Section -->
 
 </main><!-- End #main -->
