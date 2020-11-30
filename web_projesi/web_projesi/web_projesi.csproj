@@ -563,7 +563,7 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
-    <Content Include="Uploads\Slider\ninova.png" />
+    <Content Include="Uploads\Slider\3e7c8cf2-254e-452a-be9b-246fcf0e1e8b.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
