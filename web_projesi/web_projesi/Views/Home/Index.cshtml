@@ -47,11 +47,12 @@
                     <div class="icon-box-blue">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
 
-                        <h4 class="title">Tanıtım Kategorileri</h4>
+                        <h4 class="title"><a href="/Home/Hizmetlerimiz/">Tanıtım Kategorileri</a></h4>
                         <ul>
                             @foreach (var item in ViewBag.Kategori)
                             {
-                                <li><a href="/Home/Index/">@item.Aciklama</a></li>
+                               <li class="description">@item.Aciklama</li>
+                                // <li><a href="">@item.Aciklama</a></li>
                             }
 
                         </ul>

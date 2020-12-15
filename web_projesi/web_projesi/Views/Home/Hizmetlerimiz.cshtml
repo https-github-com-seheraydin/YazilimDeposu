@@ -108,7 +108,41 @@
                 </div>
 
             </div>
-        </section>
+
+        </section><!-- End Why Us Section -->
+        <!-- ======= Service Details Section ======= -->
+
+        <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6 video-box">
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gvzfkjaqN80" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+                        <div class="icon-box-blue">
+                            <div class="icon"><i class="bx bx-fingerprint"></i></div>
+
+                            <h4 class="title"><a href="/Home/Hizmetlerimiz/">Tanıtım Kategorileri </a></h4>
+                            <ul>
+                                @foreach (var item in ViewBag.Kategori)
+                                {
+                                    <li class="description">@item.Aciklama</li>
+                                    //<li><a href="">@item.Aciklama</a></li>
+                                }
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
 
     </main>
 </body>
