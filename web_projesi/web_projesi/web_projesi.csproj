@@ -566,6 +566,10 @@
     <Content Include="Uploads\Blog\IMG-20200215-WA0181.jpg" />
     <Content Include="Uploads\Blog\repo.png" />
     <Content Include="Uploads\Blog\Seher.jpg" />
+    <Content Include="Uploads\Blog\service-details-1.jpg" />
+    <Content Include="Uploads\Blog\service-details-2.jpg" />
+    <Content Include="Uploads\Blog\service-details-3.jpg" />
+    <Content Include="Uploads\Blog\service-details-4.jpg" />
     <Content Include="Uploads\Blog\software %28500 x 420%29.jpg" />
     <Content Include="Uploads\Slider\3e7c8cf2-254e-452a-be9b-246fcf0e1e8b.png" />
     <Content Include="Web.config">
