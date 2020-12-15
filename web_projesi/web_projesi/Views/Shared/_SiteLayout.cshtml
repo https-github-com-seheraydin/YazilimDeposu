@@ -42,17 +42,17 @@
         <div class="container">
 
             <div class="logo float-left">
-                <h1 class="text-light"><a href="index.html"><span>Yazılım Deposu</span></a></h1>
+                <h1 class="text-light"><a href="#"><span>Yazılım Deposu</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
 
             <nav class="nav-menu float-right d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="/Home/Index/">Ana Sayfa</a></li>
+                    <li><a href="/Home/Index/">Ana Sayfa</a></li>
                     <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
                     <li><a href="/Home/Hizmetlerimiz/">Hizmetlerimiz</a></li>
-                    <li><a href="/Home/Iletisim/">İletişim</a></li> 
+                    <li><a href="/Home/Iletisim/">İletişim</a></li>
                     <li class="drop-down">
                         <a href="">Hackathon</a>
                         <ul>
@@ -70,145 +70,148 @@
 
                         </ul>
                     </li>
-                   
+
                     <li><a href="/Home/Blog/">Blog</a></li>
                     <li class="drop-down">
-                                <a href="">Dersler</a>
+                        <a href="">Dersler</a>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li class="drop-down">
+                                <a href="#">Algoritma Programlama</a>
                                 <ul>
-                                    <li><a href="#"></a></li>
-                                    <li class="drop-down">
-                                        <a href="#">Algoritma Programlama</a>
-                                        <ul>
-                                            <li><a href="#">Ersin Arslan</a></li>
-                                            <li><a href="#">Mansur Alp Toçoğlu</a></li>
-                                            <li><a href="#">Yusuf Özçevik</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">İleri Web Programlama</a></li>
-                                    <li><a href="#">Java</a></li>
-                                    <li><a href="#">Derin Öğrenme</a></li>
+                                    <li><a href="#">Ersin Arslan</a></li>
+                                    <li><a href="#">Mansur Alp Toçoğlu</a></li>
+                                    <li><a href="#">Yusuf Özçevik</a></li>
+
                                 </ul>
                             </li>
-                   
-
-
-
-                            <li><a href="contact.html">Duyuru Başvuruları</a></li>
+                            <li><a href="#">İleri Web Programlama</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Derin Öğrenme</a></li>
                         </ul>
-                    </nav><!-- .nav-menu -->
+                    </li>
 
-                </div> 
-                
-           
-</header><!-- End Header -->
-    @RenderBody();
+
+
+
+                    <li><a href="contact.html">Duyuru Başvuruları</a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+
+
+    </header><!-- End Header -->
+    @RenderBody()
+
+  
     <!-- ======= Footer ======= -->
-<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-    <div class="footer-newsletter">
+        <div class="footer-newsletter">
+         
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <h4>MCBÜ E-Öğrenim Merkezi</h4>
+                        <p>Yazılım Mühendisliği Bölümü Öğrenme Portalı</p>
 
-        <div class="container">
-            <div class="row">
-                <div class="container">
-                   <h4>MCBÜ E-Öğrenim Merkezi</h4>
-                   <p>Yazılım Mühendisliği Bölümü Öğrenme Portalı</p>
-    
+                    </div>
+
+
                 </div>
-
-               
             </div>
         </div>
-    </div>
 
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Menülerimiz</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Index/">Ana Sayfa</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hakkımızda/">Hakkımızda</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/İletişim/">İletişim</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hackathon/">Hackathon</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Blog/">Blog</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Dersler/">Dersler</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Duyuru Başvuruları/">Duyuru Başvuruları</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6 footer-contact">
-                    <h4>Adres Bilgileri</h4>
-                    <p>
-                        @ViewBag.Iletisim.Adres<br>
-                        <strong>Telefon:</strong> @ViewBag.Iletisim.Telefon<br>
-                        <strong>Fax:</strong>  @ViewBag.Iletisim.Fax<br>
-                        <strong>Whatsapp:</strong> @ViewBag.Iletisim.Whatsapp<br>
-                        <strong>Facebook:</strong> @ViewBag.Iletisim.Facebook<br>
-                        <strong>Instagram:</strong> @ViewBag.Iletisim.Instagram<br>
-                        <strong>Twitter:</strong>  @ViewBag.Iletisim.Twitter<br>
-
-                    </p>
-
-                </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Menülerimiz</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Index/">Ana Sayfa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/İletişim/">İletişim</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hackathon/">Hackathon</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Blog/">Blog</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Dersler/">Dersler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Duyuru Başvuruları/">Duyuru Başvuruları</a></li>
+                        </ul>
+                    </div>
 
 
-                <div class="col-lg-3 col-md-6 footer-info">
-                    <h4>Blog Yazıları</h4>
-                    <ul>
-                        @foreach (var item in ViewBag.Blog)
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Adres Bilgileri</h4>
+                        <p>
+                            @ViewBag.Iletisim.Adres<br>
+                            <strong>Telefon:</strong> @ViewBag.Iletisim.Telefon<br>
+                            <strong>Fax:</strong>  @ViewBag.Iletisim.Fax<br>
+                            <strong>Whatsapp:</strong> @ViewBag.Iletisim.Whatsapp<br>
+                            <strong>Facebook:</strong> @ViewBag.Iletisim.Facebook<br>
+                            <strong>Instagram:</strong> @ViewBag.Iletisim.Instagram<br>
+                            <strong>Twitter:</strong>  @ViewBag.Iletisim.Twitter<br>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h4>Blog Yazıları</h4>
+                        <ul>
+                            @foreach (var item in ViewBag.Blog)
+                            {
+                                <li><a href="/Home/Blog/">@item.Baslik</a></li>
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Hizmetlerimiz</h4>
+
+                        @foreach (var item in ViewBag.Hizmetler)
                         {
-                            <li><a href="/Home/Blog/">@item.Baslik</a></li>
+
+                            <img src="@item.ResimURL" width="75" height="65" />
                         }
 
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Hizmetlerimiz</h4>
 
-                    @foreach (var item in ViewBag.Hizmetler)
-                    {
-                        
-                        <img src="@item.ResimURL" width="75" height="65" />
-                    }
+                    </div>
 
 
                 </div>
-
 
             </div>
 
+            <div class="col-4">
+                <ul class="social-links">
+                    <h4>Sosyal Medya hesaplarımızdan da bizi takip edebilirsiniz</h4>
+                    <a href="https://www.facebook.com/@ViewBag.Iletisim.Facebook" data-placement="top" title="Facebook"><i class="bxl-facebook-circle icofont-facebook"></i></a>
+                    <a href="https://instagram.com/@ViewBag.Iletisim.Instagram" data-placement="top" title="Instagram"><i class="bxl-instagram-circle icofont-instagram"></i></a>
+                    <a href="https://twitter.com/@ViewBag.Iletisim.Twitter" data-placement="top" title="Twitter"><i class="bxl-twitter-circle icofont-twitter"></i></a>
+                    <a href="https://web.whatsapp.com/@ViewBag.Iletisim.Whatsapp" data-placement="top" title="Whatsapp"><i class="bxl-whatsapp-circle icofont-whatsapp"></i></a>
+                </ul>
+
+            </div>
         </div>
 
-        <div class="col-4">
-            <ul class="social-links">
-                <h4>Sosyal Medya hesaplarımızdan da bizi takip edebilirsiniz</h4>
-                <a href="https://www.facebook.com/@ViewBag.Iletisim.Facebook" data-placement="top" title="Facebook"><i class="bxl-facebook-circle icofont-facebook"></i></a>
-                <a href="https://instagram.com/@ViewBag.Iletisim.Instagram" data-placement="top" title="Instagram"><i class="bxl-instagram-circle icofont-instagram"></i></a>
-                <a href="https://twitter.com/@ViewBag.Iletisim.Twitter" data-placement="top" title="Twitter"><i class="bxl-twitter-circle icofont-twitter"></i></a>
-                <a href="https://web.whatsapp.com/@ViewBag.Iletisim.Whatsapp" data-placement="top" title="Whatsapp"><i class="bxl-whatsapp-circle icofont-whatsapp"></i></a>
-            </ul>
 
+        <div class="container">
+            <div class="copyright">
+                @DateTime.Now.Year &copy; Ninova <strong><span>MCBU</span></strong>.Tüm Hakları Gizlidir
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+                Designed by <a href="#">YazılımDeposuWeb</a>
+            </div>
         </div>
-    </div>
-   
-
-    <div class="container">
-        <div class="copyright">
-            @DateTime.Now.Year &copy; Ninova <strong><span>MCBU</span></strong>.Tüm Hakları Gizlidir
-        </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-            Designed by <a href="#">YazılımDeposuWeb</a>
-        </div>
-    </div>
-</footer><!-- End Footer -->
+    </footer>
+    <!-- End Footer -->
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -227,8 +230,8 @@
     <!-- Template Main JS File -->
     <script src="/Content/SiteLayout/assets/js/main.js"></script>
 
-   @*<script src="~/scripts/jquery-3.3.1.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>*@
+    @*<script src="~/scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
 
 </body>
 </html>

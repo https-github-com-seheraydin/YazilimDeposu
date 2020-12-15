@@ -563,6 +563,10 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="Uploads\Blog\IMG-20200215-WA0181.jpg" />
+    <Content Include="Uploads\Blog\repo.png" />
+    <Content Include="Uploads\Blog\Seher.jpg" />
+    <Content Include="Uploads\Blog\software %28500 x 420%29.jpg" />
     <Content Include="Uploads\Slider\3e7c8cf2-254e-452a-be9b-246fcf0e1e8b.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -646,6 +650,7 @@
     <Content Include="Views\Slider\Index.cshtml" />
     <Content Include="Views\Home\SliderPartial.cshtml" />
     <Content Include="Views\Home\HizmetPartial.cshtml" />
+    <Content Include="Views\Home\Hakkimizda.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -662,7 +667,6 @@
     <Folder Include="Content\AdminLayout\img\" />
     <Folder Include="Content\AdminLayout\js\" />
     <Folder Include="Content\ckeditor\" />
-    <Folder Include="Uploads\Blog\" />
     <Folder Include="Uploads\Hizmet\" />
     <Folder Include="Uploads\Kimlik\" />
   </ItemGroup>

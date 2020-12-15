@@ -28,25 +28,25 @@
 </section><!-- End Hero -->
 
 <main id="main">
-  @{
-      Html.RenderAction("HizmetPartial");
-}
+    @{
+        Html.RenderAction("HizmetPartial");
+    }
 
     <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
 
             <div class="row">
                 <div class="col-lg-6 video-box">
-                    
+
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/gvzfkjaqN80" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    
+
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
 
                     <div class="icon-box-blue">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        
+
                         <h4 class="title">Tanıtım Kategorileri</h4>
                         <ul>
                             @foreach (var item in ViewBag.Kategori)
@@ -81,77 +81,78 @@
                 }
 
                 </div>
-                
-                </div>
+
+            </div>
 
             @*<div class="row" data-aos="fade-up">
-                <div class="col-md-5">
-                    <img src="/Content/SiteLayout/assets/img/features-1.svg" class="img-fluid" alt="">
+                    <div class="col-md-5">
+                        <img src="/Content/SiteLayout/assets/img/features-1.svg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <p class="font-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua.
+                        </p>
+                        <ul>
+                            <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-7 pt-4">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="row" data-aos="fade-up">
-                <div class="col-md-5 order-1 order-md-2">
-                    <img src="/Content/SiteLayout/assets/img/features-2.svg" class="img-fluid" alt="">
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5 order-1 order-md-2">
+                        <img src="/Content/SiteLayout/assets/img/features-2.svg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <h3>Corporis temporibus maiores provident</h3>
+                        <p class="font-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua.
+                        </p>
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Corporis temporibus maiores provident</h3>
-                    <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </p>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </div>
-            </div>
 
-            <div class="row" data-aos="fade-up">
-                <div class="col-md-5">
-                    <img src="/Content/SiteLayout/assets/img/features-3.svg" class="img-fluid" alt="">
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5">
+                        <img src="/Content/SiteLayout/assets/img/features-3.svg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-5">
+                        <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
+                        <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+                        <ul>
+                            <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                            <li><i class="icofont-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-7 pt-5">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-                    <ul>
-                        <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="icofont-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="row" data-aos="fade-up">
-                <div class="col-md-5 order-1 order-md-2">
-                    <img src="/Content/SiteLayout/assets/img/features-4.svg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-                    <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </p>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </div>
-            </div>*@
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5 order-1 order-md-2">
+                        <img src="/Content/SiteLayout/assets/img/features-4.svg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+                        <p class="font-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua.
+                        </p>
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum
+                        </p>
+                    </div>
+                </div>*@
 
-    </section><!-- End Features Section -->
+        </section><!-- End Features Section -->
+        
 
-</main><!-- End #main -->
+    </main><!-- End #main -->

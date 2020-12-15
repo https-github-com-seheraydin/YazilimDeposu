@@ -1,0 +1,222 @@
+﻿@model web_projesi.Models.Model.Hakkimizda
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<!-- ======= Header ======= -->
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container">
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="#"><span>Yazılım Deposu</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                    <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                    <li><a href="/Home/Hizmetlerimiz/">Hizmetlerimiz</a></li>
+                    <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    <li class="drop-down">
+                        <a href="">Hackathon</a>
+                        <ul>
+                            <li><a href="#">Hackathon Konuları</a></li>
+
+                            <li class="drop-down">
+                                <a href="#">Hackathon</a>
+                                <ul>
+                                    <li><a href="#">Hackathon Kazanan Takımı</a></li>
+
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li><a href="/Home/Blog/">Blog</a></li>
+                    <li class="drop-down">
+                        <a href="">Dersler</a>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li class="drop-down">
+                                <a href="#">Algoritma Programlama</a>
+                                <ul>
+                                    <li><a href="#">Ersin Arslan</a></li>
+                                    <li><a href="#">Mansur Alp Toçoğlu</a></li>
+                                    <li><a href="#">Yusuf Özçevik</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">İleri Web Programlama</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Derin Öğrenme</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li><a href="contact.html">Duyuru Başvuruları</a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+
+
+    </header>
+    <main id="main">
+        <!-- ======= About Us Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>YAZILIM DEPOSU</h2>
+                    <ol>
+                        <li><a href="/Home/Index/">AnaSayfa</a></li>
+                        <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+
+
+        <section class="about" data-aos="fade-up">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="~/Uploads/Blog/software (500 x 420).jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <h3>Yazılım Deposu Hakkında</h3>
+                        <p class="font-italic">
+                            @Html.Raw(Model.Aciklama)
+                            <ul>
+                                <li><i class="icofont-check-circled"></i> Derslerin içerikleri ve proje&ödev konularına ait öğrencileri bilgilendirme platformu.</li>
+                                <li><i class="icofont-check-circled"></i> Hackathon toplantıları web sitesimiz üzerinden yapılan duyuru ve içeriklerle sağlanır.</li>
+                                <li><i class="icofont-check-circled"></i> Öğrencilerin projelerini daha ileri seviyelere taşıması için akademisyenlere heran ulaşabileceği platformdur.</li>
+                            </ul>
+                        <p>
+                            Yazılım Deposu ile CBÜ'de verilen derslerinizin ödevlerini, duyurularını, projelerini, mesaj panolarından takip edebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Facts Section ======= -->
+        <section class="facts section-bg" data-aos="fade-up">
+            <div class="container">
+
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">600</span>
+                        <p>Öğrenciler</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">10</span>
+                        <p>Akademisyenler</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">5</span>
+                        <p>Hachatkon Takım Kadrosu</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">2</span>
+                        <p>Site Kurucuları</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Facts Section -->
+        <!-- ======= Our Skills Section ======= -->
+        <section class="skills" data-aos="fade-up">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Kullanılan Dil ve Teknolojiler</h2>
+                    <p>
+                        Yazılım Deposu web sitemizin arka planında dönen programlama dilleri ve yüzdelik oranları.
+                    </p>
+                </div>
+
+                <div class="skills-content">
+
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                            <span class="skill">JavaScript <i class="val">55%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="29.5" aria-valuemin="0" aria-valuemax="100">
+                            <span class="skill">HTML <i class="val">29.5%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="12.1" aria-valuemin="0" aria-valuemax="100">
+                            <span class="skill">CSS <i class="val">12.1%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100">
+                            <span class="skill">C# <i class="val">8%</i></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Our Skills Section -->
+        <!-- ======= Tetstimonials Section ======= -->
+        <section class="testimonials" data-aos="fade-up">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Kurucularımız Hakkında</h2>
+                </div>
+
+                <div class="owl-carousel testimonials-carousel">
+
+                    <div class="testimonial-item">
+                        <img src="~/Uploads/Blog/IMG-20200215-WA0181.jpg" class="testimonial-img" alt="">
+                        <h3>Serhat YAREN</h3>
+                        <h4>BackEnd-FrontEnd Developer &amp; Software Engineer</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> 
+                            <h3>VİZYONUMUZ</h3> 
+                            Bilim, teknoloji ve yeniliğin ışığında sürekli üreten ve hayatımızı kolaylaştıran bölümümüzün akademisyenleri önderliğinde projeler ve hackathon toplantılarıyla öğrenci arkadaşlarımızın hedeflerini,hayallerini daha üst noktalara taşımayı amaçlıyoruz.  
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <img src="~/Uploads/Blog/Seher.jpg" class="testimonial-img" alt="">
+                        <h3>Seher AYDIN</h3>
+                        <h4>Database Design &amp; Software Engineer</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            <h3>MİSYONUMUZ</h3>
+                            Manisa Celal Bayar Üniversitesi Yazılım Mühendisliği Bölümü öğrencileri ve akademisyenleri için bilgi paylaşımı sağlamak amacıyla üretilmiş olan bir platformdur.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+           </div>
+        </div>
+        </section><!-- End Ttstimonials Section -->
+
+    </main>
+</body>
