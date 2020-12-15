@@ -656,6 +656,7 @@
     <Content Include="Views\Home\HizmetPartial.cshtml" />
     <Content Include="Views\Home\Hakkimizda.cshtml" />
     <Content Include="Views\Home\Hizmetlerimiz.cshtml" />
+    <Content Include="Views\Home\Iletisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
