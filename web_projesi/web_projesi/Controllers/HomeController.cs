@@ -42,6 +42,15 @@ namespace web_projesi.Controllers
             ViewBag.Kimlik = db.Kimlik.ToList();
             return View(db.Hakkimizda.SingleOrDefault());
         }
+        public ActionResult Hizmetlerimiz()
+        {
+            ViewBag.Hizmetler = db.Hizmet.ToList();
+            ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+            ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
+            ViewBag.Kimlik = db.Kimlik.ToList();
+            return View(db.Hizmet.ToList().OrderByDescending(x => x.HizmetId));
+        }
         
     }
 }
