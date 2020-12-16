@@ -71,9 +71,23 @@ namespace web_projesi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DuyuruBasvuruları(string AdSoyad=null,string email=null, string Konu=null,string Mesaj=null)
+        public ActionResult DuyuruBasvuruları(string AdSoyad=null,string email=null, string Konu=null,string Mesaj=null,string Number=null)
         {
-           
+            if (AdSoyad != null && email != null)
+            {
+                WebMail.SmtpServer = "smtp.gmail.com";
+                WebMail.EnableSsl = true;
+                WebMail.UserName = "yazilimdeposu09@gmail.com";
+                WebMail.Password = "YazilimDeposu0935";
+                WebMail.SmtpPort = 587;
+                WebMail.Send("yazilimdeposu09@gmail.com", AdSoyad,email + " " + Mesaj);
+                ViewBag.Uyari = "Mesajınız başarılı şekilde gönderilmiştir";
+
+            }
+            else
+            {
+                ViewBag.Uyari = "Mesajınız gönderilemedi.Tekrar deneyiniz";
+            }
             ViewBag.Hizmetler = db.Hizmet.ToList();
             ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
             ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
