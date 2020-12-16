@@ -563,6 +563,7 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="Uploads\Blog\akademisyen-olmak-ana-gorsel %28600 x 400%29.jpg" />
     <Content Include="Uploads\Blog\akademisyen-olmak-ana-gorsel.jpeg" />
     <Content Include="Uploads\Blog\IMG-20200215-WA0181.jpg" />
     <Content Include="Uploads\Blog\repo.png" />
