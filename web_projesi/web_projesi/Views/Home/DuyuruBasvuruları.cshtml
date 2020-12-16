@@ -86,12 +86,26 @@
 
             </div>
         </section><!-- End About Us Section -->
+        <!-- ======= About Us Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>DUYURULAR & HABERLEŞME</h2>
+                    <ol>
+                        <li><a href="/Home/Index/">AnaSayfa</a></li>
+                        <li><a href="/Home/DuyuruBasvuruları/">Duyuru Başvuruları</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
         <!-- ======= Contact Section ======= -->
         <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
             <div class="container">
-
                 <div class="col-lg-12">
-                    <form action="/Home/DuyuruBasvuruları/" method="post" role="form" class="contactForm">
+                    <form action="/Home/DuyuruBasvuruları" method="post" role="form" class="php-email-form">
+
                         <div class="form-row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="AdSoyad" class="form-control" id="name" placeholder="Ad-Soyadınız" data-rule="minlen:8" data-msg="Lütfen adınızı giriniz" />
@@ -106,21 +120,16 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="Number" id="subject" placeholder="Öğrenci Numaranız" data-rule="minlen:9" data-msg="Lütfen 9 Haneli olan öğrenci numaranızı doğru giriniz" />
+                                <input type="text" class="form-control" name="Number" id="subject" placeholder="Öğrenci Numaranız" data-rule="minlen:9 maxlen:9" data-msg="Lütfen 9 Haneli olan öğrenci numaranızı doğru giriniz" />
                                 <div class="validate"></div>
                             </div>
-
                         </div>
-
                         <div class="form-group">
                             <textarea class="form-control" name="Mesaj" rows="5" data-rule="required" data-msg="Lütfen sorunuzu detaylı şekilde yazınız." placeholder="Mesajınız"></textarea>
                             <div class="validate"></div>
                         </div>
-                        <div class="text-center"><button type="submit">Gönder</button></div><br /> <br />
 
-                               <div class="mb-auto">
-                             <div class="alert alert-info">@ViewBag.Uyari</div>
-                            </div>
+                        <div class="text-center"><button type="submit">Gönder</button></div><br /><br />
                     </form>
                 </div>
             </div>
