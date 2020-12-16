@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using web_projesi.Models.DataContext;
 
@@ -69,6 +70,18 @@ namespace web_projesi.Controllers
             ViewBag.Kimlik = db.Kimlik.ToList();
             return View();
         }
-        
+        [HttpPost]
+        public ActionResult DuyuruBasvuruları(string AdSoyad=null,string email=null, string Konu=null,string Mesaj=null)
+        {
+           
+            ViewBag.Hizmetler = db.Hizmet.ToList();
+            ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+            ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
+            ViewBag.Kimlik = db.Kimlik.ToList();
+            return View();
+        }
+
+
     }
 }
