@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "DuyuruBasvuruları";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container">
+
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="#"><span>Yazılım Deposu</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                    <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                    <li><a href="/Home/Hizmetlerimiz/">Hizmetlerimiz</a></li>
+                    <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    <li class="drop-down">
+                        <a href="">Hackathon</a>
+                        <ul>
+                            <li><a href="#">Hackathon Konuları</a></li>
+
+                            <li class="drop-down">
+                                <a href="#">Hackathon</a>
+                                <ul>
+                                    <li><a href="#">Hackathon Kazanan Takımı</a></li>
+
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li><a href="/Home/Blog/">Blog</a></li>
+                    <li class="drop-down">
+                        <a href="">Dersler</a>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li class="drop-down">
+                                <a href="#">Algoritma Programlama</a>
+                                <ul>
+                                    <li><a href="#">Ersin Arslan</a></li>
+                                    <li><a href="#">Mansur Alp Toçoğlu</a></li>
+                                    <li><a href="#">Yusuf Özçevik</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">İleri Web Programlama</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Derin Öğrenme</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="active"><a href="/Home/DuyuruBasvuruları/">Duyuru Başvuruları</a>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+
+    </header>
+
+    <main>
+        <!-- ======= About Us Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>DUYURULAR</h2>
+                    <ol>
+                        <li><a href="/Home/Index/">AnaSayfa</a></li>
+                        <li><a href="/Home/DuyuruBasvuruları/">Duyuru Başvuruları</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <!-- ======= Contact Section ======= -->
+        <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="container">
+
+                <div class="col-lg-12">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="form-row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Ad-Soyadınız" data-rule="required" data-msg="Lütfen adınızı giriniz" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="GMail" data-rule="email" data-msg="Lütfen geçerli eposta adresini giriniz" />
+                                <div class="validate"></div>
+                            </div>
+                        
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Konu Başlığı" data-rule="required" data-msg="Lütfen gerekli alanı doldurunuz"/>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="minlen:50" data-msg="Lütfen sorunuzu detaylı şekilde yazınız." placeholder="Mesaj"></textarea>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">
+                                Mesajınız gönderildi.Teşekkür ederim!
+                            </div>
+                        </div>
+                        <div class="text-center"><button type="submit">Gönder</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
