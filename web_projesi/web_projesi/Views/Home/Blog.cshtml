@@ -87,36 +87,35 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                    <img src="@item.ResimURL" alt="" class="img-fluid">
+                                <img src="@item.ResimURL" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="entry-title">
+                                <a href="/Home/BlogDetay/@item.BlogId">
+                                    @Html.Raw(item.Icerik.Substring(0, 200))...
+                                </a>
+                            </h2>
+
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><a href="#">@DateTime.Now</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="entry-content">
+                                <p>
+                                    <h6>Blog Başlık:@item.Baslik</h6>
+                                    <h6>Kategori Ad:@item.Kategori.KategoriAd</h6>
+                                    <h6>Kategori Açıklama:@item.Kategori.Aciklama</h6>
+
+                                </p>
+                                <div class="read-more">
+                                    <a href="/Home/BlogDetay/@item.BlogId">Daha Fazlası</a>
                                 </div>
+                            </div>
 
-                                <h2 class="entry-title">
-                                    <a href="/Home/BlogDetay/@item.BlogId">
-                                        @Html.Raw(item.Icerik.Substring(0, 200))...
-                                    </a>
-                                </h2>
-
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><a href="#">@DateTime.Now</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="entry-content">
-                                    <p>
-                                        <h6>Blog Başlık:@item.Baslik</h6>
-                                        <h6>Kategori Ad:@item.Kategori.KategoriAd</h6>
-                                        <h6>Kategori Açıklama:@item.Kategori.Aciklama</h6>
-
-                                    </p>
-                                    <div class="read-more">
-                                        <a href="/Home/BlogDetay/@item.BlogId">Daha Fazlası</a>
-                                    </div>
-                                </div>
-
-</article><!-- End blog entry -->
+                        </article><!-- End blog entry -->
                     }
-
                     <div class="blog-pagination">
                         <ul class="justify-content-center">
                             <li class="disabled"><i class="icofont-rounded-left"></i></li>
@@ -129,9 +128,32 @@
 
                 </div><!-- End blog entries list -->
 
-            </div><!-- End .row -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
 
-        </div><!-- End .container -->
+                        <h3 class="sidebar-title">Search</h3>
+                        <div class="sidebar-item search-form">
+                            <form action="">
+                                <input type="text">
+                                <button type="submit"><i class="icofont-search"></i></button>
+                            </form>
+                        </div><!-- End sidebar search formn-->
+
+                        <h3 class="sidebar-title">Kategoriler</h3>
+                        <div class="sidebar-item categories">
+                            @{ 
+                                Html.RenderAction("BlogKategoriPartial", "Home");
+                            }
+                        </div><!-- End sidebar categories-->
+
+
+
+             </div>
+                    </div><!-- End blog entries list -->
+
+                </div><!-- End .row -->
+
+            </div><!-- End .container -->
 
     </section><!-- End Blog Section -->
 

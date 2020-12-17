@@ -101,7 +101,11 @@ namespace web_projesi.Controllers
             ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
             ViewBag.Kimlik = db.Kimlik.ToList();
             return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x => x.BlogId));
-        }
 
+        }
+        public ActionResult BlogKategoriPartial()
+        {
+            return PartialView(db.Kategori.ToList().OrderBy(x=>x.KategoriAd));
+        }
     }
 }
