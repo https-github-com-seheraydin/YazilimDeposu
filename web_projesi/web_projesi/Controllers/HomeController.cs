@@ -103,6 +103,16 @@ namespace web_projesi.Controllers
             return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x => x.BlogId));
 
         }
+        public ActionResult BlogDetay(int id)
+        {
+            ViewBag.Hizmetler = db.Hizmet.ToList();
+            ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+            ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
+            ViewBag.Kimlik = db.Kimlik.ToList();
+            var b = db.Blog.Include("Kategori").Where(x => x.BlogId == id).SingleOrDefault();
+            return View(b);
+        }
         public ActionResult BlogKategoriPartial()
         {
             return PartialView(db.Kategori.Include("Blogs").ToList().OrderBy(x=>x.KategoriAd));
