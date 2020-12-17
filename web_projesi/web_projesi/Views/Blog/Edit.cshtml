@@ -14,7 +14,7 @@
         <div class="form-group ">
             <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
             <div class="col-lg-10">
-                <input class="form-control" id="Baslik" name="baslik" minlength="5" type="text" required value="@Model.Baslik"/>
+                <input class="form-control" id="Baslik" name="baslik" minlength="5" type="text" required value="@Model.Baslik" />
             </div>
         </div>
         <div class="form-group ">
@@ -23,6 +23,12 @@
                 @Html.DropDownList("KategoriId", null, new { @class = "form-control" })
             </div>
         </div>
+       @* <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Blog<span class="required">*</span></label>
+            <div class="col-lg-10">
+                @Html.DropDownList("BlogId", null, new { @class = "form-control" })
+            </div> 
+        </div> *@
         <div class="form-group ">
             <label for="cemail" class="control-label col-lg-2">İçerik<span class="required">*</span></label>
             <div class="col-lg-10">
@@ -38,7 +44,7 @@
         <div class="form-group ">
             <label for="curl" class="control-label col-lg-2">Resim</label>
             <div class="col-lg-10">
-                <input class="form-control "  name="ResimURL" type="file" accept=".jpg,.png,.jpeg" />
+                <input class="form-control " name="ResimURL" type="file" accept=".jpg,.png,.jpeg" />
             </div>
         </div>
 

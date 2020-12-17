@@ -74,10 +74,67 @@
 
         </div>
     </section><!-- End About Us Section -->
+    <!-- ======= Blog Section ======= -->
+    <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
 
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+
+                    @foreach (var item in Model)
+                    {
+                        <article class="entry">
+
+                            <div class="entry-img">
+                                    <img src="@item.ResimURL" alt="" class="img-fluid">
+                                </div>
+
+                                <h2 class="entry-title">
+                                    <a href="/Home/BlogDetay/@item.BlogId">
+                                        @Html.Raw(item.Icerik.Substring(0, 200))...
+                                    </a>
+                                </h2>
+
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><a href="#">@DateTime.Now</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="entry-content">
+                                    <p>
+                                        <h6>Blog Başlık:@item.Baslik</h6>
+                                        <h6>Kategori Ad:@item.Kategori.KategoriAd</h6>
+                                        <h6>Kategori Açıklama:@item.Kategori.Aciklama</h6>
+
+                                    </p>
+                                    <div class="read-more">
+                                        <a href="/Home/BlogDetay/@item.BlogId">Daha Fazlası</a>
+                                    </div>
+                                </div>
+
+</article><!-- End blog entry -->
+                    }
+
+                    <div class="blog-pagination">
+                        <ul class="justify-content-center">
+                            <li class="disabled"><i class="icofont-rounded-left"></i></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div><!-- End blog entries list -->
+
+            </div><!-- End .row -->
+
+        </div><!-- End .container -->
+
+    </section><!-- End Blog Section -->
 
 </main>
-
-
 
 </body>

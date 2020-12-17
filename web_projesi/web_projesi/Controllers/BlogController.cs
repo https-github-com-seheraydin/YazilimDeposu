@@ -92,7 +92,7 @@ namespace web_projesi.Controllers
                 }
                 b.Baslik = blog.Baslik;
                 b.Icerik = blog.Icerik;
-                b.KategoriId = blog.KategoriId;
+                //b.KategoriId = blog.KategoriId;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
