@@ -141,14 +141,23 @@
 
                         <h3 class="sidebar-title">Kategoriler</h3>
                         <div class="sidebar-item categories">
-                            @{ 
+                            @{
                                 Html.RenderAction("BlogKategoriPartial", "Home");
                             }
                         </div><!-- End sidebar categories-->
 
 
+                        <h3 class="sidebar-title">Son Blog Kayıtları</h3>
+                        <div class="sidebar-item recent-posts">
+                            @{
+                                Html.RenderAction("BlogKayitPartial", "Home");
+                            }
+                        </div><!-- End sidebar recent posts-->
 
-             </div>
+
+                    </div>
+
+
                     </div><!-- End blog entries list -->
 
                 </div><!-- End .row -->

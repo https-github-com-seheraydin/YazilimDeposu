@@ -107,5 +107,10 @@ namespace web_projesi.Controllers
         {
             return PartialView(db.Kategori.Include("Blogs").ToList().OrderBy(x=>x.KategoriAd));
         }
+
+        public ActionResult BlogKayitPartial()
+        {
+            return PartialView(db.Blog.ToList().OrderByDescending(x => x.BlogId));
+        }
     }
 }
