@@ -105,7 +105,7 @@ namespace web_projesi.Controllers
         }
         public ActionResult BlogKategoriPartial()
         {
-            return PartialView(db.Kategori.ToList().OrderBy(x=>x.KategoriAd));
+            return PartialView(db.Kategori.Include("Blogs").ToList().OrderBy(x=>x.KategoriAd));
         }
     }
 }
