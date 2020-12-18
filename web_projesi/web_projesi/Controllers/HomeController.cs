@@ -115,6 +115,19 @@ namespace web_projesi.Controllers
             var b = db.Blog.Include("Kategori").Where(x => x.BlogId == id).SingleOrDefault();
             return View(b);
         }
+
+        public JsonResult YorumYap(string adsoyad,string eposta,string icerik,DateTime tarih,int blogıd)
+        {
+            if(icerik == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            db.Yorum.Add(new Models.Model.Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, Tarih = tarih, BlogId = blogıd, Onay = false});
+            db.SaveChanges();
+            return Json(false,JsonRequestBehavior.AllowGet);
+        }
+
+
         public ActionResult BlogKategoriPartial()
         {
             return PartialView(db.Kategori.Include("Blogs").ToList().OrderBy(x=>x.KategoriAd));

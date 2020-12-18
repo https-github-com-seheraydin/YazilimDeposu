@@ -19,6 +19,7 @@ namespace web_projesi.Models.Model
         public string Eposta { get; set; }
         [Required,DisplayName("Yorumunuz")]
         public string Icerik { get; set; }
+        public bool Onay { get; set; }
         public DateTime Tarih { get; set; }
         public int? BlogId { get; set; }
         public Blog Blog { get; set; }
