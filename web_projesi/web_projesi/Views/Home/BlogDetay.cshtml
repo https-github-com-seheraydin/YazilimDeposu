@@ -116,7 +116,7 @@
                             <div class="reply-form">
                                 <h4>Yorumda Bulunabilirsiniz</h4>
                                 <p>E-posta hesabınız yayımlanmayacak.</p>
-                                <form action="">
+                                <form action="/Home/YorumYap/@Model.BlogId">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
                                             <input name="name" type="text" required class="form-control" placeholder="Adınız Soyadınız">
@@ -134,48 +134,70 @@
                                     <button type="submit" class="btn btn-primary">Gönder</button>
                                 </form>
                             </div>
-                  </div>
+                        </div>
 
-                        </div><!-- End blog entries list -->
+                    </div><!-- End blog entries list -->
 
-                        <div class="col-lg-4">
-                            <div class="sidebar">
+                    <div class="col-lg-4">
+                        <div class="sidebar">
 
-                                <h3 class="sidebar-title">Search</h3>
-                                <div class="sidebar-item search-form">
-                                    <form action="">
-                                        <input type="text">
-                                        <button type="submit"><i class="icofont-search"></i></button>
-                                    </form>
-                                </div><!-- End sidebar search formn-->
+                            <h3 class="sidebar-title">Search</h3>
+                            <div class="sidebar-item search-form">
+                                <form action="">
+                                    <input type="text">
+                                    <button type="submit"><i class="icofont-search"></i></button>
+                                </form>
+                            </div><!-- End sidebar search formn-->
 
-                                <h3 class="sidebar-title">Kategoriler</h3>
-                                <div class="sidebar-item categories">
-                                    @{
-                                        Html.RenderAction("BlogKategoriPartial", "Home");
-                                    }
-                                </div><!-- End sidebar categories-->
-
-
-                                <h3 class="sidebar-title">Son Blog Kayıtları</h3>
-                                <div class="sidebar-item recent-posts">
-                                    @{
-                                        Html.RenderAction("BlogKayitPartial", "Home");
-                                    }
-                                </div><!-- End sidebar recent posts-->
+                            <h3 class="sidebar-title">Kategoriler</h3>
+                            <div class="sidebar-item categories">
+                                @{
+                                    Html.RenderAction("BlogKategoriPartial", "Home");
+                                }
+                            </div><!-- End sidebar categories-->
 
 
-                            </div>
+                            <h3 class="sidebar-title">Son Blog Kayıtları</h3>
+                            <div class="sidebar-item recent-posts">
+                                @{
+                                    Html.RenderAction("BlogKayitPartial", "Home");
+                                }
+                            </div><!-- End sidebar recent posts-->
 
 
-                        </div><!-- End blog entries list -->
+                        </div>
 
-                    </div><!-- End .row -->
+
+                    </div><!-- End blog entries list -->
+
+                </div><!-- End .row -->
 
             </div><!-- End .container -->
 
         </section><!-- End Blog Section -->
 
-        </main>
+    </main>
 
 </body>
+
+    <script src="~/scripts/jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#gonder").click(function () {
+            var adisoyadi = $("#adsoyad").val();
+            var epostasi = $("#eposta").val();
+            var yorumunuz = $("#icerik").val();
+            $.ajak({
+                url: '/Home/YorumYap',
+                data: { adsoyad: adisoyadi, eposta: epostasi, icerik: yorumunuz, blogıd: @Model.BlogId},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    alert("Yorumunuz eklendi,kontrol edildikten sonra yayınlanacaktır.");
+                }
+            });
+        });
+    })
+         
+</script>

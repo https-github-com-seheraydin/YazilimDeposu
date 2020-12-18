@@ -116,13 +116,13 @@ namespace web_projesi.Controllers
             return View(b);
         }
 
-        public JsonResult YorumYap(string adsoyad,string eposta,string icerik,DateTime tarih,int blogıd)
+        public JsonResult YorumYap(string adsoyad,string eposta,string icerik,int blogıd)
         {
             if(icerik == null)
             {
                 return Json(true, JsonRequestBehavior.AllowGet);
             }
-            db.Yorum.Add(new Models.Model.Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, Tarih = tarih, BlogId = blogıd, Onay = false});
+            db.Yorum.Add(new Models.Model.Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, BlogId = blogıd, Onay = false});
             db.SaveChanges();
             return Json(false,JsonRequestBehavior.AllowGet);
         }
