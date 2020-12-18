@@ -190,7 +190,7 @@
             var yorumunuz = $("#icerik").val();
             $.ajak({
                 url: '/Home/YorumYap',
-                data: { adsoyad: adisoyadi, eposta: epostasi, icerik: yorumunuz, blogıd: @Model.BlogId},
+                data: { adsoyad: adisoyadi, eposta: epostasi, icerik: yorumunuz, blogId: @Model.BlogId},
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
