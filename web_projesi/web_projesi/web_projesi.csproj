@@ -610,6 +610,7 @@
     <Compile Include="Models\Model\Kategori.cs" />
     <Compile Include="Models\Model\Kimlik.cs" />
     <Compile Include="Models\Model\Slider.cs" />
+    <Compile Include="Models\Model\Yorum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
