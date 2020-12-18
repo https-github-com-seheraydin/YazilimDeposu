@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using web_projesi.Models.DataContext;
+using PagedList;
+using PagedList.Mvc;
 
 namespace web_projesi.Controllers
 {
