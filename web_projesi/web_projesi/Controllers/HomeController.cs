@@ -95,14 +95,14 @@ namespace web_projesi.Controllers
             return View();
         }
 
-        public ActionResult Blog()
+        public ActionResult Blog(int Page = 1)
         {
             ViewBag.Hizmetler = db.Hizmet.ToList();
             ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
             ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
             ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
             ViewBag.Kimlik = db.Kimlik.ToList();
-            return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x => x.BlogId));
+            return View(db.Blog.Include("Kategori").OrderByDescending(x => x.BlogId).ToPagedList(Page, 4));
 
         }
         public ActionResult BlogDetay(int id)
@@ -122,7 +122,7 @@ namespace web_projesi.Controllers
 
         public ActionResult BlogKayitPartial()
         {
-            return PartialView(db.Blog.ToList().OrderByDescending(x => x.BlogId));
+            return PartialView(db.Blog.ToList().OrderBy(x => x.BlogId));
         }
     }
 }

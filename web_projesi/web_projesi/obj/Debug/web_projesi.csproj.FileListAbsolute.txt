@@ -128,3 +128,7 @@ C:\Users\karde\Desktop\son\web_projesi\web_projesi\obj\Debug\web_projesi.csproj.
 C:\Users\karde\Desktop\son\web_projesi\web_projesi\obj\Debug\web_projesi.csproj.CopyComplete
 C:\Users\karde\Desktop\son\web_projesi\web_projesi\obj\Debug\web_projesi.dll
 C:\Users\karde\Desktop\son\web_projesi\web_projesi\obj\Debug\web_projesi.pdb
+C:\Users\karde\Desktop\son\web_projesi\web_projesi\bin\PagedList.dll
+C:\Users\karde\Desktop\son\web_projesi\web_projesi\bin\PagedList.Mvc.dll
+C:\Users\karde\Desktop\son\web_projesi\web_projesi\bin\PagedList.xml
+C:\Users\karde\Desktop\son\web_projesi\web_projesi\bin\PagedList.Mvc.xml
