@@ -121,8 +121,10 @@
                     }
                
                 <div class="blog-pagination">
-                    @Html.PagedListPager(Model, Page => Url.Action("Blog", new { Page }), PagedListRenderOptions.Classic)
-                </div>
+                    <ul class="justify-content-center">
+                        @Html.PagedListPager(Model, Page => Url.Action("Blog", new { Page }), PagedListRenderOptions.Classic)
+                     </ul>
+                        </div>
 
                 </div><!-- End blog entries list -->
 
