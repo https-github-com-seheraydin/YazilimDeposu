@@ -116,7 +116,7 @@
                             <div class="reply-form">
                                 <h4>Yorumda Bulunabilirsiniz</h4>
                                 <p>E-posta hesabınız yayımlanmayacak.</p>
-                                <form action="/Home/YorumYap/@Model.BlogId">
+                                <form action="">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
                                             <input name="name" type="text" required class="form-control" placeholder="Adınız Soyadınız">
@@ -176,19 +176,17 @@
 
         </section><!-- End Blog Section -->
 
-    </main>
 
-</body>
 
-    <script src="~/scripts/jquery-3.3.1.js"></script>
+        <script src="~/scripts/jquery-3.3.1.js"></script>
 
-<script type="text/javascript">
+        <script type="text/javascript">
     $(document).ready(function () {
         $("#gonder").click(function () {
             var adisoyadi = $("#adsoyad").val();
             var epostasi = $("#eposta").val();
             var yorumunuz = $("#icerik").val();
-            $.ajak({
+            $.ajax({
                 url: '/Home/YorumYap',
                 data: { adsoyad: adisoyadi, eposta: epostasi, icerik: yorumunuz, blogId: @Model.BlogId},
                 type: 'POST',
@@ -199,5 +197,8 @@
             });
         });
     })
-         
-</script>
+
+        </script>
+    </main>
+
+</body>

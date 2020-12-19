@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using web_projesi.Models.DataContext;
 using PagedList;
 using PagedList.Mvc;
+using web_projesi.Models.Model;
 
 namespace web_projesi.Controllers
 {
@@ -122,8 +123,13 @@ namespace web_projesi.Controllers
             {
                 return Json(true, JsonRequestBehavior.AllowGet);
             }
-            db.Yorum.Add(new Models.Model.Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, BlogId = blogId, Onay = false});
+            db.Yorum.Add(new Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, BlogId = blogId, Onay = false});
             db.SaveChanges();
+            ViewBag.Hizmetler = db.Hizmet.ToList();
+            ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+            ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
+            ViewBag.Kimlik = db.Kimlik.ToList();
             return Json(false,JsonRequestBehavior.AllowGet);
         }
 
