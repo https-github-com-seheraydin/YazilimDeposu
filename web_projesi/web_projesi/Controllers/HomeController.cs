@@ -113,7 +113,7 @@ namespace web_projesi.Controllers
             ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
             ViewBag.Kategori = db.Kategori.ToList().OrderByDescending(x => x.KategoriId);
             ViewBag.Kimlik = db.Kimlik.ToList();
-            var b = db.Blog.Include("Kategori").Where(x => x.BlogId == id).SingleOrDefault();
+            var b = db.Blog.Include("Kategori").Include("Yorums").Where(x => x.BlogId == id).SingleOrDefault();
             return View(b);
         }
 

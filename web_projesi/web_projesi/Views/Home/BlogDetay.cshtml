@@ -109,13 +109,13 @@
 
                                 </p>
 
-                            </div>
 
+                            </div>
                         </article><!-- End blog entry -->
                         <div class="blog-comments">
                             <div class="reply-form">
                                 <h4>Yorumda Bulunabilirsiniz</h4>
-                                <p>E-posta hesabınız yayımlanmayacak.</p>
+
                                 <form action="">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
@@ -134,6 +134,28 @@
                                     <button type="submit" class="btn btn-primary">Gönder</button>
                                 </form>
                             </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+
+                                <h4>Blog Makale Yorumları</h4>
+
+                                @foreach (var item in Model.Yorums.OrderByDescending(x => x.YorumId))
+                                {
+
+
+                                    <p>
+                                        @item.AdSoyad - @item.Eposta
+                                    </p>
+                                    <p>@item.Icerik</p>
+                                    <hr />
+
+                                }
+                            </div><!-- End comment #1 -->
+
                         </div>
 
                     </div><!-- End blog entries list -->
