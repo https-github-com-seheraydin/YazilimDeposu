@@ -1,0 +1,172 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<web_projesi.Models.Model.Blog>
+@{
+    ViewBag.Title = "KategoriBlog";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container">
+
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="#"><span>Yazılım Deposu</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                    <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                    <li><a href="/Home/Hizmetlerimiz/">Hizmetlerimiz</a></li>
+                    <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    <li class="active"><a href="/Home/Blog/">Blog</a></li>
+                    <li class="drop-down">
+                        <a href="">Hackathon</a>
+                        <ul>
+                            <li><a href="#">Hackathon Konuları</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop-down">
+                        <a href="">Dersler</a>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li class="drop-down">
+                                <a href="#">Algoritma Programlama</a>
+                                <ul>
+                                    <li><a href="#">Ersin Arslan</a></li>
+                                    <li><a href="#">Mansur Alp Toçoğlu</a></li>
+                                    <li><a href="#">Yusuf Özçevik</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">İleri Web Programlama</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Derin Öğrenme</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li><a href="/Home/DuyuruBasvuruları/">Duyuru Başvuruları</a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+
+
+    </header>
+    <main id="main">
+        <!-- ======= About Us Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>KATEGORİ BLOG</h2>
+                    <ol>
+                        <li><a href="/Home/Index/">AnaSayfa</a></li>
+                        <li><a href="/Home/Blog/">Blog</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+
+        <!-- ======= Blog Section ======= -->
+        <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-8 entries">
+
+                        @foreach (var item in Model)
+                        {
+                            <article class="entry">
+
+                                <div class="entry-img">
+                                    <img src="@item.ResimURL" alt="" class="img-fluid">
+                                </div>
+
+                                <h2 class="entry-title">
+                                    <a href="/Home/BlogDetay/@item.BlogId">
+                                        @Html.Raw(item.Icerik.Substring(0, 200))...
+                                    </a>
+                                </h2>
+
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><a href="#">@DateTime.Now</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="entry-content">
+                                    <p>
+                                        <h6>Blog Başlık:@item.Baslik</h6>
+                                        <h6>Kategori Ad:@item.Kategori.KategoriAd</h6>
+                                        <h6>Kategori Açıklama:@item.Kategori.Aciklama</h6>
+
+                                    </p>
+                                    <div class="read-more">
+                                        <a href="/Home/BlogDetay/@item.BlogId">Daha Fazlası</a>
+                                    </div>
+                                </div>
+
+                            </article><!-- End blog entry -->
+                        }
+
+                        <div class="blog-pagination">
+                            <ul class="justify-content-center">
+                                @Html.PagedListPager(Model, Page => Url.Action("Blog", new { Page }), PagedListRenderOptions.Classic)
+                            </ul>
+                        </div>
+
+                    </div><!-- End blog entries list -->
+
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+
+                            <h3 class="sidebar-title">Search</h3>
+                            <div class="sidebar-item search-form">
+                                <form action="">
+                                    <input type="text">
+                                    <button type="submit"><i class="icofont-search"></i></button>
+                                </form>
+                            </div><!-- End sidebar search formn-->
+
+                            <h3 class="sidebar-title">Kategoriler</h3>
+                            <div class="sidebar-item categories">
+                                @{
+                                    Html.RenderAction("BlogKategoriPartial", "Home");
+                                }
+                            </div><!-- End sidebar categories-->
+
+
+                            <h3 class="sidebar-title">Son Blog Kayıtları</h3>
+                            <div class="sidebar-item recent-posts">
+                                @{
+                                    Html.RenderAction("BlogKayitPartial", "Home");
+                                }
+                            </div><!-- End sidebar recent posts-->
+
+
+                        </div>
+
+
+                    </div><!-- End blog entries list -->
+
+                </div><!-- End .row -->
+
+            </div><!-- End .container -->
+
+        </section><!-- End Blog Section -->
+
+    </main>
+
+</body>
+
