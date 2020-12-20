@@ -19,6 +19,10 @@ namespace web_projesi.Controllers
         [Route("yonetimpaneli")]
         public ActionResult Index()
         {
+            ViewBag.BlogSay = db.Blog.Count();
+            ViewBag.KategoriSay = db.Kategori.Count();
+            ViewBag.HizmetSay = db.Hizmet.Count();
+            ViewBag.SiteAçıklamaSay = db.Kimlik.Count();
             var sorgu = db.Admin.ToList();
             return View(sorgu);
         }
