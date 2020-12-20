@@ -16,13 +16,15 @@ namespace web_projesi.Controllers
         YazilimDeposuDBContext db = new YazilimDeposuDBContext();
 
         // GET: Admin
+        [Route("yonetimpaneli")]
         public ActionResult Index()
         {
             var sorgu = db.Admin.ToList();
             return View(sorgu);
         }
         
-        //login action
+        //login action 
+        [Route("/yonetimpaneli/giris")]
         public ActionResult Login()
         {
             return View();
