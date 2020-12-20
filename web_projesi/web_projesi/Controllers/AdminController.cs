@@ -37,12 +37,12 @@ namespace web_projesi.Controllers
 
         //post metodu
         [HttpPost]
-        public ActionResult Login(Admin admin,string sifre)
+        public ActionResult Login(Admin admin)
         {
-            var md5pass = Crypto.Hash(sifre, "MD5");
+            
             //bize gelen e posta modelden gelen e posta eşleşme kontrolü
             var login = db.Admin.Where(x => x.Eposta == admin.Eposta).SingleOrDefault();
-            if (login.Eposta == admin.Eposta && login.Sifre == md5pass)
+            if (login.Eposta == admin.Eposta && login.Sifre == Crypto.Hash(admin.Sifre, "MD5"))
             {
                 //oturum değişkeni oluştur-->session
                 Session["adminid"] = login.AdminId;
