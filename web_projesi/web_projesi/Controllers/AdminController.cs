@@ -107,5 +107,17 @@ namespace web_projesi.Controllers
             
             return View(admin);//Hata varsa Admin modelini geri çevir
         }
+        public ActionResult Delete(int id)
+        {
+            var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+            if (a != null)
+            {
+                db.Admin.Remove(a);
+                db.SaveChanges();
+                return RedirectToAction("Adminler");
+            }
+            
+            return View();
+        }
     }
 }
