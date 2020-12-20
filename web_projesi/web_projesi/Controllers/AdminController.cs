@@ -73,6 +73,19 @@ namespace web_projesi.Controllers
             return View();
         }
     
+        public ActionResult Create(Admin admin, string sifre, string eposta)
+        {
+            if (ModelState.IsValid)
+            {
+                admin.Sifre = Crypto.Hash(sifre, "MD5");
+                db.Admin.Add(admin);
+                db.SaveChanges();
+                return RedirectToAction("Adminler");
 
+            }
+
+            return View();
+        }
+        
     }
 }
