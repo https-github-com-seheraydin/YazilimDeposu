@@ -16,7 +16,7 @@ namespace web_projesi.Controllers
         YazilimDeposuDBContext db = new YazilimDeposuDBContext();
 
         // GET: Admin
-        [Route("yonetimpanelı")]
+        [Route("yonetimpaneli")]
         public ActionResult Index()
         {
             var sorgu = db.Admin.ToList();
