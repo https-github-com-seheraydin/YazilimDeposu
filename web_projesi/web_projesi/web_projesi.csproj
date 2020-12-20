@@ -675,6 +675,7 @@
     <Content Include="Views\Home\BlogKayitPartial.cshtml" />
     <Content Include="Views\Home\BlogDetay.cshtml" />
     <Content Include="Views\Home\KategoriBlog.cshtml" />
+    <Content Include="Views\Admin\Adminler.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
