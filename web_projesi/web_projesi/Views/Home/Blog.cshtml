@@ -119,14 +119,16 @@
 
                         </article><!-- End blog entry -->
                     }
-               
-                <div class="blog-pagination">
-                    <ul class="justify-content-center">
-                        @Html.PagedListPager(Model, Page => Url.Action("Blog", new { Page }), PagedListRenderOptions.Classic)
-                     </ul>
-                        </div>
+
+                    <div class="blog-pagination">
+                        <ul class="justify-content-center">
+                            @Html.PagedListPager(Model, Page => Url.Action("Blog", new { Page }), PagedListRenderOptions.Classic)
+                        </ul>
+                    </div>
 
                 </div><!-- End blog entries list -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
 
                         <h3 class="sidebar-title">Kategoriler</h3>
                         <div class="sidebar-item categories">
@@ -147,9 +149,9 @@
                     </div>
 
 
-                    </div><!-- End blog entries list -->
+                </div><!-- End blog entries list -->
 
-                </div><!-- End .row -->
+            </div><!-- End .row -->
 
             </div><!-- End .container -->
 
