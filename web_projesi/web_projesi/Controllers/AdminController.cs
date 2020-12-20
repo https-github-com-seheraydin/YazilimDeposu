@@ -73,6 +73,7 @@ namespace web_projesi.Controllers
             return View();
         }
     
+         [HttpPost]
         public ActionResult Create(Admin admin, string sifre, string eposta)
         {
             if (ModelState.IsValid)
@@ -86,6 +87,25 @@ namespace web_projesi.Controllers
 
             return View();
         }
-        
+        public ActionResult Edit(int id)
+        {
+            var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+            return View(a);
+        }
+        [HttpPost]
+        public ActionResult Edit(int id,Admin admin,string sifre,string eposta)
+        {
+            if (ModelState.IsValid)
+            {
+                var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+                a.Sifre = Crypto.Hash(sifre, "MD5");
+                a.Eposta = admin.Eposta;
+                a.Yetki = admin.Yetki;
+                db.SaveChanges();
+                return RedirectToAction("Adminler");
+            }
+            
+            return View(admin);//Hata varsa Admin modelini geri çevir
+        }
     }
 }
