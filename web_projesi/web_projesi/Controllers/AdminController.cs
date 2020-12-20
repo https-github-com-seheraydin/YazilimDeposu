@@ -22,7 +22,7 @@ namespace web_projesi.Controllers
             ViewBag.BlogSay = db.Blog.Count();
             ViewBag.KategoriSay = db.Kategori.Count();
             ViewBag.HizmetSay = db.Hizmet.Count();
-            ViewBag.SiteAçıklamaSay = db.Kimlik.Count();
+            ViewBag.SiteAciklamaSay = db.Kimlik.Count();
             var sorgu = db.Admin.ToList();
             return View(sorgu);
         }
