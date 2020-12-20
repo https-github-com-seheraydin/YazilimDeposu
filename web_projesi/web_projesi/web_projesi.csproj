@@ -582,6 +582,7 @@
     <Content Include="Uploads\Blog\service-details-4.jpg" />
     <Content Include="Uploads\Blog\software %28500 x 420%29.jpg" />
     <Content Include="Uploads\Slider\3e7c8cf2-254e-452a-be9b-246fcf0e1e8b.png" />
+    <Content Include="Uploads\Slider\ninova %28500 x 420%29 %28500 x 300%29.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
