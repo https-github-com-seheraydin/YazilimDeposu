@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using web_projesi.Models;
 using web_projesi.Models.DataContext;
@@ -26,7 +27,7 @@ namespace web_projesi.Controllers
             var sorgu = db.Admin.ToList();
             return View(sorgu);
         }
-        
+
         //login action 
         [Route("/yonetimpaneli/giris")]
         public ActionResult Login()
@@ -40,7 +41,7 @@ namespace web_projesi.Controllers
         {
             //bize gelen e posta modelden gelen e posta eşleşme kontrolü
             var login = db.Admin.Where(x => x.Eposta == admin.Eposta).SingleOrDefault();
-            if(login.Eposta==admin.Eposta && login.Sifre==admin.Sifre)
+            if (login.Eposta == admin.Eposta && login.Sifre == admin.Sifre)
             {
                 //oturum değişkeni oluştur-->session
                 Session["adminid"] = login.AdminId;
@@ -58,14 +59,20 @@ namespace web_projesi.Controllers
             Session["adminid"] = null;
             Session["eposta"] = null;
             Session.Abandon();
-            return RedirectToAction("Login","Admin");
-            
+            return RedirectToAction("Login", "Admin");
+
         }
 
         public ActionResult Adminler()
         {
             return View(db.Admin.ToList());
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+    
 
     }
 }
