@@ -91,6 +91,7 @@ namespace web_projesi.Controllers
 
                 //girilen epostaya şifreyi md5 olmadan  mail gönder
                 WebMail.Send(eposta, "Admin Panel Giriş Şifreniz", "Şifreniz:" + yenisifre);
+                ViewBag.Uyari = "Şifreniz E-posta adresinize iletildi!";
 
 
             }
