@@ -23,7 +23,7 @@
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
-   
+
 
 
     <!-- Bootstrap CSS -->
@@ -66,7 +66,7 @@
 
     <script src="~/scripts/DataTables/dataTables.bootstrap4.js"></script>
     <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
-    @*<script src="~/scripts/jquery-3.3.1.js"></script>*@
+    @* <script src="~/scripts/jquery-3.3.1.js"></script>*@
     <script src="~/scripts/DataTables/jquery.dataTables.js"></script>
     <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
 
@@ -89,9 +89,10 @@
             <div class="nav search-row" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu">
+                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
+                            <input type="search" class="form-control" placeholder="Arama">
                         </form>
                     </li>
                 </ul>
@@ -190,18 +191,22 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="/Content/AdminLayout/img/avatar1_small.jpg">
-                            </span>
+                            <i class="fas fa-users-cog"></i>  
                             <span class="username">@Session["eposta"]</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
-                            <li>
-                                <a href="/Admin/Adminler/"><i class="icon_key_alt"></i>Adminler</a>
-                            </li>
+                     
+                            @{if (Session["Yetki"].ToString()=="Admin")
+                                {
+                                    <li>
+                                        <a href="/Admin/Adminler/"><i class="icon_key_alt"></i>Adminler</a>
+                                    </li>
+                                }
 
+                            }
+                        
                             <li>
                                 <a href="/Admin/Logout/"><i class="icon_key_alt"></i>Çıkış Yap</a>
                             </li>
@@ -223,51 +228,58 @@
                         <a class="" href="/Admin/Index">
                             <i class="icon_house_alt"></i>
                             <span>Admin Özet</span>
-                        </a>
-                    <li>
-                        <a class="" href="/Kimlik/Index/">
-                            <i class="icon_genius"></i>
-                            <span>Site Kimlik</span>
+
                         </a>
                     </li>
-                    <li>
-                        <a class="" href="/Hakkimizda/Index/">
-                            <i class="icon_genius"></i>
-                            <span>Hakkımızda</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/Slider/Index/">
-                            <i class="icon_genius"></i>
-                            <span>Slider</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/Iletisim/Index/">
-                            <i class="icon_genius"></i>
-                            <span>İletişim</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/Hizmet/Index/">
-                            <i class="icon_genius"></i>
-                            <span>Hizmetler</span>
-                        </a>
-                    </li>
-                    
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_document_alt"></i>
-                            <span>Blog Kayıtları</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="/Kategori/Index/">Kategoriler</a></li>
-                            <li><a class="" href="/Blog/Index">Blog Kayıtları</a></li>
-                        </ul>
-                    </li>
-              
-                </ul>     
+                    @{if (Session["Yetki"].ToString() == "Admin")
+                        {
+                            <li>
+                                <a class="" href="/Kimlik/Index/">
+                                    <i class="icon_genius"></i>
+                                    <span>Site Kimlik</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="/Hakkimizda/Index/">
+                                    <i class="icon_genius"></i>
+                                    <span>Hakkımızda</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="/Slider/Index/">
+                                    <i class="icon_genius"></i>
+                                    <span>Slider</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="/Iletisim/Index/">
+                                    <i class="icon_genius"></i>
+                                    <span>İletişim</span>
+                                </a>
+
+                            </li>
+                            }
+                        }
+                            <li>
+                                <a class="" href="/Hizmet/Index/">
+                                    <i class="icon_genius"></i>
+                                    <span>Hizmetler</span>
+                                </a>
+                            </li>
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" class="">
+                                    <i class="icon_document_alt"></i>
+                                    <span>Blog Kayıtları</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="/Kategori/Index/">Kategoriler</a></li>
+                                    <li><a class="" href="/Blog/Index">Blog Kayıtları</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>     
                 <!-- sidebar menu end-->
             </div>
         </aside>     

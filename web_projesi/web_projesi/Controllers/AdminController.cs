@@ -47,6 +47,7 @@ namespace web_projesi.Controllers
                 //oturum değişkeni oluştur-->session
                 Session["adminid"] = login.AdminId;
                 Session["eposta"] = login.Eposta;
+                Session["yetki"] = login.Yetki;
                 //Giriş yaptıktan sonra adminin indexine git
                 return RedirectToAction("Index", "Admin");
             }
@@ -56,7 +57,7 @@ namespace web_projesi.Controllers
         }
         public ActionResult Logout()
         {
-            //oturum sonlandır
+            //oturum sonlandıryetki
             Session["adminid"] = null;
             Session["eposta"] = null;
             Session.Abandon();
