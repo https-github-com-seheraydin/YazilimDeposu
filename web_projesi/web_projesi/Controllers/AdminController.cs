@@ -42,7 +42,7 @@ namespace web_projesi.Controllers
             
             //bize gelen e posta modelden gelen e posta eşleşme kontrolü
             var login = db.Admin.Where(x => x.Eposta == admin.Eposta).SingleOrDefault();
-            if (login.Eposta == admin.Eposta && login.Sifre == Crypto.Hash(admin.Sifre, "MD5"))
+            if (login.Eposta == admin.Eposta && login.Sifre == Crypto.Hash(admin.Sifre, "MD5")) //şifreyi md5 olarak giriş yap
             {
                 //oturum değişkeni oluştur-->session
                 Session["adminid"] = login.AdminId;
@@ -62,6 +62,11 @@ namespace web_projesi.Controllers
             Session.Abandon();
             return RedirectToAction("Login", "Admin");
 
+        }
+
+        public ActionResult SifremiUnuttum()
+        {
+            return View();
         }
 
         public ActionResult Adminler()
