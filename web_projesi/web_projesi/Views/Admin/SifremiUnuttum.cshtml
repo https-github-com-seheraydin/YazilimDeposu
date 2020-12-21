@@ -27,6 +27,7 @@
 
 </head>
 <body>
+    @ViewBag.Uyari
     @using (Html.BeginForm("SifremiUnuttum", "Admin", FormMethod.Post, new { enctype="multipart/form-data"}))
     {
         @Html.AntiForgeryToken()

@@ -68,7 +68,40 @@ namespace web_projesi.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult SifremiUnuttum(string eposta)
+        {
+            //girilen epostaya dair db de şifre var mı?
+            var mail = db.Admin.Where(x => x.Eposta == eposta).SingleOrDefault();
+            if (mail!=null)
+            {
+                //random şifre üret ve öd5 olarak db ye kaydet
+                Random rnd = new Random();
+                int yenisifre = rnd.Next();
 
+                Admin admin = new Admin();
+                mail.Sifre = Crypto.Hash(Convert.ToString(yenisifre),"MD5");
+                db.SaveChanges();
+
+                WebMail.SmtpServer = "smtp.gmail.com";
+                WebMail.EnableSsl = true;
+                WebMail.UserName = "yazilimdeposu09@gmail.com";
+                WebMail.Password = "YazilimDeposu0935";
+                WebMail.SmtpPort = 587;
+
+                //girilen epostaya şifreyi md5 olmadan  mail gönder
+                WebMail.Send(eposta, "Admin Panel Giriş Şifreniz", "Şifreniz:" + yenisifre);
+
+
+            }
+            else
+            {
+                ViewBag.Uyari = "Hata Oluştu. Tekrar Deneyiniz";
+            }
+            
+            return View();
+        }
+       
         public ActionResult Adminler()
         {
             return View(db.Admin.ToList());
