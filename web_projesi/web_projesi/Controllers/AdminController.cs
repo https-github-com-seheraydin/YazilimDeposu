@@ -47,7 +47,6 @@ namespace web_projesi.Controllers
                 //oturum değişkeni oluştur-->session
                 Session["adminid"] = login.AdminId;
                 Session["eposta"] = login.Eposta;
-                Session["yetki"] = login.Yetki;
                 //Giriş yaptıktan sonra adminin indexine git
                 return RedirectToAction("Index", "Admin");
             }
