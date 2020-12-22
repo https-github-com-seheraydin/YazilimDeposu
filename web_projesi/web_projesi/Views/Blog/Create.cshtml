@@ -34,7 +34,22 @@
         <div class="form-group ">
             <label for="curl" class="control-label col-lg-2">Resim</label>
             <div class="col-lg-10">
-                <input class="form-control " required name="ResimURL" type="file" accept=".jpg,.png,.jpeg" />
+                <input required name="ResimURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
+
+                <script type="text/javascript">
+                    function validateFileType() {
+                        var fileName = document.getElementById("fileName").value;
+                        var idxDot = fileName.lastIndexOf(".") + 1;
+                        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+                            //TO DO
+                        } else {
+                            alert("Sadece jpg/jpeg ve png dosyaları için geçerli !");
+                            document.getElementById("fileName").value = "";
+                        }
+
+                    }
+                </script>
             </div>
         </div>
 
