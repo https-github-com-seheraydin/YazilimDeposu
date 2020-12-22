@@ -45,13 +45,24 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LogoURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="LogoURL" accept=".png,.jpg,.jpeg" class="form-control" />
+                <input name="image" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
                 @Html.ValidationMessageFor(model => model.LogoURL, "", new { @class = "text-danger" })
+                <script type="text/javascript">
+                    function validateFileType() {
+                        var fileName = document.getElementById("fileName").value;
+                        var idxDot = fileName.lastIndexOf(".") + 1;
+                        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+                            //TO DO
+                        } else {
+                            alert("Sadece jpg/jpeg ve png dosyaları için geçerli !");
+                        }
+                        
+                    }
+                </script>
+
             </div>
         </div>
-
-        
-
         <div class="form-group">
             @Html.LabelFor(model => model.Unvan, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

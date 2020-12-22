@@ -83,17 +83,17 @@ namespace web_projesi.Controllers
             {
                 if (LogoURL != null)
                 {
-
+                    
                     WebImage img = new WebImage(LogoURL.InputStream);
                     FileInfo imginfo = new FileInfo(LogoURL.FileName);
 
                     String kimlikname = Guid.NewGuid().ToString() + imginfo.Extension;
                     img.Resize(500, 500);
                     img.Save("~/Uploads/Kimlik/" + kimlikname);
-
                     kimlik.LogoURL = "/Uploads/Kimlik/" + kimlikname;
 
                 }
+              
                 db.Kimlik.Add(kimlik);
                 db.SaveChanges();
                 return RedirectToAction("Index");
