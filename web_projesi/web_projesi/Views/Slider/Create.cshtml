@@ -11,33 +11,51 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Slider</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal">
+    <h4>Slider</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Aciklama, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Aciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="ResimURL" class="form-control" required placeholder="Resim Seçiniz"/>
-                @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input require name="ResimURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
+            @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
+
+            <script type="text/javascript">
+                function validateFileType() {
+                    var fileName = document.getElementById("fileName").value;
+                    var idxDot = fileName.lastIndexOf(".") + 1;
+                    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                    if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+                        //TO DO
+                    } else {
+                        alert("Sadece jpg/jpeg ve png dosyaları için geçerli !");
+                        document.getElementById("fileName").value = "";
+                    }
+
+                }
+            </script>
+
         </div>
+    </div>
+
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
