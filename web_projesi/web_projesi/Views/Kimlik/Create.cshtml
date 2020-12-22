@@ -6,7 +6,7 @@
 }
 <script type="text/javascript">
     CKEDITOR.replacee('editor')
-   
+
 </script>
 
 <h2>Yeni Ekle</h2>
@@ -14,7 +14,7 @@
 @using (Html.BeginForm("Create", "Kimlik", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Kimlik</h4>
         <hr />
@@ -43,10 +43,10 @@
             </div>
         </div>
         <div class="form-group">
-          @Html.LabelFor(model => model.LogoURL, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.LogoURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input  required name="LogoURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
-             
+                <input required name="LogoURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
+
                 @Html.ValidationMessageFor(model => model.LogoURL, "", new { @class = "text-danger" })
                 <script type="text/javascript">
                     function validateFileType() {
@@ -54,13 +54,12 @@
                         var idxDot = fileName.lastIndexOf(".") + 1;
                         var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
                         if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
-                            //TO DO
+                            alert("Başarılı şekilde yüklendi !");
                         } else {
                             alert("Sadece jpg/jpeg ve png dosyaları için geçerli !");
-                            document.getElementById("fileName").value = "";
-                        }
 
-                    }
+                        }
+                      
                 </script>
 
             </div>
@@ -74,7 +73,7 @@
         </div>
 
         <div class="form-group">
-           
+
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Oluştur" class="btn btn-default" />
             </div>
@@ -85,3 +84,5 @@
 <div>
     @Html.ActionLink("Geri Dön", "Index")
 </div>
+
+
