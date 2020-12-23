@@ -4,6 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>CSS - Icons</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
 
 <h2>İletişim</h2>
 
@@ -36,35 +42,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Adres)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Whatsapp)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Facebook)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Twitter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Instagram)
-        </td>
-        <td>
-            @Html.ActionLink("Güncelle", "Edit", new { id=item.IletisimId }) |
-            @Html.ActionLink("Görüntüle", "Details", new { id=item.IletisimId }) |
-            @Html.ActionLink("Sil", "Delete", new { id=item.IletisimId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Whatsapp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Facebook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Twitter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instagram)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.IletisimId }) |
+                @Html.ActionLink("Görüntüle", "Details", new { id = item.IletisimId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.IletisimId })
+            </td>
+        </tr>
+    }
 
 </table>
