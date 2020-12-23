@@ -7,14 +7,20 @@
 <script>
     $(document).ready(function () {
         $('#myTable').DataTable(
-             {
-                 "language": {
-                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
-                 }
-             }
-            );
+            {
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            }
+        );
     });
 </script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>CSS - Icons</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
 
 <h2>Blog Kayıtları</h2>
 <a class="btn btn-info" href="/Blog/Create/">Yeni Blog Ekle</a>
@@ -31,16 +37,16 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            @*<td>@item.BlogId</td>*@
-            <td>@item.Baslik</td>
-            <td>@item.Kategori.KategoriAd</td>
-            <td><img src="@item.ResimURL" width="150" height="150" /></td>
-            <td><a href="/Blog/Edit/@item.BlogId">Güncelle</a> | <a href="/Blog/Delete/@item.BlogId">Sil</a></td>
-        </tr>
+            <tr>
+                @*<td>@item.BlogId</td>*@
+                <td>@item.Baslik</td>
+                <td>@item.Kategori.KategoriAd</td>
+                <td><img src="@item.ResimURL" width="150" height="150" /></td>
+                <td><a href="/Blog/Edit/@item.BlogId">Güncelle</a> | <a href="/Blog/Delete/@item.BlogId">Sil</a></td>
+            </tr>
         }
-       
-       
-        
+
+
+
     </tbody>
 </table>
