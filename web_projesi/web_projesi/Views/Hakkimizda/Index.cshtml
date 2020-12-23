@@ -5,10 +5,19 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <title>CSS - Icons</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+</head>
 
 
 <table class="table">
+    <i class="fas fa-blog"></i>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Aciklama)
@@ -16,16 +25,17 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.Raw(item.Aciklama)
-        </td>
-        <td>
-            @Html.ActionLink("Güncelleme", "Edit", new { id=item.HakkimizdaId }) 
-            
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Raw(item.Aciklama)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelleme", "Edit", new { id = item.HakkimizdaId })
+
+            </td>
+        </tr>
+    }
 
 </table>

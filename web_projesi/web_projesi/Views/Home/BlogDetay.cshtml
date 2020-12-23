@@ -11,8 +11,7 @@
 
             <div class="logo float-left">
                 <h1 class="text-light"><a href="#"><span>Yazılım Deposu</span></a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+               
             </div>
 
             <nav class="nav-menu float-right d-none d-lg-block">
@@ -136,7 +135,7 @@
                         <div class="row">
                             <div>
 
-                                <h4>Blog Makale Yorumları</h4>
+                                <h4>Blog Yorumları</h4>
 
                                 @foreach (var item in Model.Yorums.OrderByDescending(x => x.YorumId))
                                 {
@@ -199,7 +198,7 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    alert("Yorumunuz eklendi,kontrol edildikten sonra yayınlanacaktır.");
+                    alert("Yorumunuz eklendi,kontrol edildikten sonra yayımlanacaktır.");
                 }
             });
         });
