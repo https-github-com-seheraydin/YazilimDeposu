@@ -32,7 +32,12 @@
             @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group ">
+        <label for="curl" class="control-label col-lg-2">Önceki Resim</label>
+        <div class="col-lg-10">
+            <img src="@Model.ResimURL" width="150" height="150" />
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
