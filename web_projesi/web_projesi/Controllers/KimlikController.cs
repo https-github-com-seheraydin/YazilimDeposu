@@ -93,6 +93,7 @@ namespace web_projesi.Controllers
                     kimlik.LogoURL = "/Uploads/Kimlik/" + kimlikname;
 
                 }
+
               
                 db.Kimlik.Add(kimlik);
                 db.SaveChanges();
@@ -118,7 +119,6 @@ namespace web_projesi.Controllers
             return RedirectToAction("Index");
 
         }
-
 
     }
 }
