@@ -6,11 +6,21 @@
 }
 
 
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>CSS - Icons</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+</head>
 
 <p>
     @Html.ActionLink("Yeni Ekle", "Create")
 </p>
-<table class="table table-bordered table-striped table-responsive-sm" >
+<table class="table table-bordered table-striped table-responsive-sm">
+    <i class="fas fa-blog"></i>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -33,29 +43,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Keywords)
-        </td>
-        <td>
-            @Html.Raw(item.Description)
-        </td>
-        <td>
-            <img class="img-responsive" src="@item.LogoURL" width="400" height="300" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Unvan)
-        </td>
-        <td>
-            @Html.ActionLink("Güncelle", "Edit", new { id = item.KimlikId })|@Html.ActionLink("Sil", "Delete", new { id = item.KimlikId })
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keywords)
+            </td>
+            <td>
+                @Html.Raw(item.Description)
+            </td>
+            <td>
+                <img class="img-responsive" src="@item.LogoURL" width="400" height="300" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unvan)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.KimlikId })|@Html.ActionLink("Sil", "Delete", new { id = item.KimlikId })
 
 
-        </td>
-    </tr>
-}
+            </td>
+        </tr>
+    }
 
 </table>
