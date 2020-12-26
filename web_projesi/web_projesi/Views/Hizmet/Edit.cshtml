@@ -28,7 +28,7 @@
         <div class="form-group ">
             <label for="curl" class="control-label col-lg-2">Resim<span class="required">*</span></label>
             <div class="col-lg-10">
-                <input required name="ResimURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
+                <input required name="ResimURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="ValidateSize(this),validateFileType()" />
 
 
                 <script type="text/javascript">
@@ -42,8 +42,17 @@
                             alert("Sadece jpg/jpeg ve png dosyaları için geçerli!");
                             document.getElementById("fileName").value = "";
                         }
-
                     }
+                        function ValidateSize(file) {
+                            var FileSize = file.files[0].size / 1024 / 1024; // in MB
+                            if (FileSize > 2) {
+                                alert("Dosya Boyutu 2MB dan daha fazla olamaz!");
+                                document.getElementById("fileName").value = "";
+
+                            }
+
+                        }
+                    
                 </script>
 
             </div>

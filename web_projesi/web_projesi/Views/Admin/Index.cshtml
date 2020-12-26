@@ -60,6 +60,28 @@
 </div>
 <!--/.row-->
 
+<h2>Admin-Yetki</h2>
+<a class="title" href="/Admin/Adminler/">Yetkili Adminler</a>
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            @*<th>BlogId</th>*@
+            <th>Yetki</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>@item.BlogId</td>*@
+                <td>@item.Yetki</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
 
 <div class="text-right">
     <div class="credits">

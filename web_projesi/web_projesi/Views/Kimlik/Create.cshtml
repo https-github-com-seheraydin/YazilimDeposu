@@ -45,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LogoURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input required name="LogoURL" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" />
+                <input required name="LogoURL "type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="ValidateSize(this),validateFileType()" />
 
                 @Html.ValidationMessageFor(model => model.LogoURL, "", new { @class = "text-danger" })
                 <script type="text/javascript">
@@ -57,9 +57,19 @@
                             alert("Başarılı şekilde yüklendi!");
                         } else {
                             alert("Sadece jpg/jpeg ve png dosyaları için geçerli !");
+                            document.getElementById("fileName").value = "";
+                        }
+                    }
+                        function ValidateSize(file) {
+                            var FileSize = file.files[0].size / 1024 / 1024; // in MB
+                            if (FileSize > 2) {
+                                alert("Dosya Boyutu 2MB dan daha fazla olamaz!");
+                                document.getElementById("fileName").value = "";
+
+                            }
 
                         }
-                      
+                    
                 </script>
 
             </div>
