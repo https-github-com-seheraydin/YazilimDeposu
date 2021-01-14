@@ -65,6 +65,10 @@ namespace web_projesi.Controllers
             ViewBag.Kimlik = db.Kimlik.ToList();
             return View(db.Iletisim.SingleOrDefault());
         }
+        public ActionResult Hackathon()
+        {
+            return View();
+        }
         public ActionResult DuyuruBasvuruları()
         {
             ViewBag.Hizmetler = db.Hizmet.ToList();
