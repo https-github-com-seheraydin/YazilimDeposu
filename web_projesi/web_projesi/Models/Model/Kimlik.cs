@@ -23,7 +23,7 @@ namespace web_projesi.Models.Model
         public string Keywords { get; set; }
 
         [DisplayName("Site Açıklama")]
-        [Required, StringLength(300, ErrorMessage = "300 karakter olmalıdır.")]
+        [Required]
         public string Description { get; set; }
 
         [DisplayName("Site Logo")]
