@@ -572,6 +572,7 @@
     <Content Include="scripts\umd\popper.min.js" />
     <Content Include="Uploads\Blog\1400x600.jpg" />
     <Content Include="Uploads\Blog\24114.jpg" />
+    <Content Include="Uploads\Blog\6dcafb8fcaf60c99b0f699e272725dac.jpg" />
     <Content Include="Uploads\Blog\900x750.jpg" />
     <Content Include="Uploads\Blog\9e0873ef85e19973b9f42cd114b755e076590dc1 %281000 x 600%29.jpg" />
     <Content Include="Uploads\Blog\9e0873ef85e19973b9f42cd114b755e076590dc1.jpg" />
@@ -585,6 +586,7 @@
     <Content Include="Uploads\Blog\internet-for-hackatons-1024x480 %28960 x 640%29.jpg" />
     <Content Include="Uploads\Blog\internet-for-hackatons-1024x480.jpg" />
     <Content Include="Uploads\Blog\ninova %28500 x 420%29.jpg" />
+    <Content Include="Uploads\Blog\openaihackathon-1.jpg" />
     <Content Include="Uploads\Blog\regtech.jpg" />
     <Content Include="Uploads\Blog\repo.png" />
     <Content Include="Uploads\Blog\Seher.jpg" />
