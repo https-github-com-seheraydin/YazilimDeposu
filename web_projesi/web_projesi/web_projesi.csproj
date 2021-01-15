@@ -579,6 +579,7 @@
     <Content Include="Uploads\Blog\akademisyen-olmak-ana-gorsel.jpeg" />
     <Content Include="Uploads\Blog\Dg3KelnZ.jpg" />
     <Content Include="Uploads\Blog\drone3-960x640.jpg" />
+    <Content Include="Uploads\Blog\Gallery-2480-JUSJ301220191522.jpg" />
     <Content Include="Uploads\Blog\hackathon-nedir.png" />
     <Content Include="Uploads\Blog\IMG-20200215-WA0181.jpg" />
     <Content Include="Uploads\Blog\internet-for-hackatons-1024x480 %28960 x 640%29.jpg" />
@@ -691,6 +692,7 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\SifremiUnuttum.cshtml" />
     <Content Include="Views\Home\Hackathon.cshtml" />
+    <Content Include="Uploads\Blog\E2EAIHackathonLinkedIn.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
