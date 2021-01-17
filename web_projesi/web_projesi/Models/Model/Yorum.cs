@@ -17,7 +17,7 @@ namespace web_projesi.Models.Model
         public string AdSoyad { get; set; }
         [Required]
         public string Eposta { get; set; }
-        [Required,DisplayName("Yorumunuz")]
+        [Required,DisplayName("Yorumunuz"), StringLength(500, ErrorMessage ="500 Karakter olabilir")]
         public string Icerik { get; set; }
         public bool Onay { get; set; }
         public int? BlogId { get; set; }
